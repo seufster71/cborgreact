@@ -1,9 +1,9 @@
-package com.cborgtech.service;
+package com.cborgtech.common;
 
 import org.springframework.stereotype.Component;
 import org.toasthub.core.general.model.RestRequest;
 import org.toasthub.core.general.model.RestResponse;
-import org.toasthub.core.general.service.MicroServiceClient;
+import org.toasthub.core.serviceCrawler.MicroServiceClient;
 
 
 @Component("MicroServiceClient")

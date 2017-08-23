@@ -13,12 +13,16 @@ var config = {
 	},
 	module : {
 		loaders : [
+			{
+				test : /\.js?/,
+				include: APP_DIR,
+				loader: 'eslint-loader'
+			},
 	      {
 	        test : /\.js?/,
 	        include : APP_DIR,
 	        loader : 'babel-loader',
 	        query: {
-	                    cacheDirectory: true,
 	                    presets: ['es2015', 'react']
 	                }
 	      }
