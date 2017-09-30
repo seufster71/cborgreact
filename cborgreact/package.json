@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "lint": "./node_modules/.bin/eslint webpack.config.* src"
+    "lint": "./node_modules/.bin/eslint webpack.config.* src",
+    "dev": "webpack -d --watch",
+    "buildprod" : "webpack -p"
   },
   "author": "",
   "license": "ISC",
