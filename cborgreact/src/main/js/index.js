@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import AwesomeComponent from './AwesomeComponent.js';
+import Theme from './theme.css';
 
 class App extends React.Component {
   render() {
