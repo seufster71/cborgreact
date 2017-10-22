@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import NavigationContainer from './core/navigation/NavigationContainer.js';
+import LoginContainer from './core/usermanagement/LoginContainer.js';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import Theme from './theme.css';
 
@@ -10,15 +11,23 @@ class App extends React.Component {
 	    super();
 	    this.state = {
 	      headerName: 'CBorgTech',
-        showMenu: true
+        menuName: 'home'
 	    };
-	  }
+	}
+
+  navigationChange() {
+
+  }
 
   render() {
 
     return (
       <div className="container-fluid">
-        {this.state.showMenu ? (<NavigationContainer headerName={this.state.headerName}/>) : (<div></div>)}
+        {this.state.menuName == 'home' ? (
+          <div><NavigationContainer headerName={this.state.headerName}/> Main page</div>
+        ) : (
+          <div><NavigationContainer headerName={this.state.headerName}/><LoginContainer/></div>
+          )}
 		  </div>
     );
   }
