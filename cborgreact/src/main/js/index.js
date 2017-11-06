@@ -13,20 +13,22 @@ class App extends React.Component {
 	      headerName: 'CBorgTech',
         menuName: 'home'
 	    };
+      this.navigationChange = this.navigationChange.bind(this);
 	}
 
-  navigationChange() {
-
+  navigationChange(params) {
+    console.log("nav change");
+    this.setState({menuName : 'login'});
   }
 
   render() {
-
+    console.log("state name " + this.state.menuName);
     return (
       <div className="container-fluid">
         {this.state.menuName == 'home' ? (
-          <div><NavigationContainer headerName={this.state.headerName}/> Main page</div>
+          <div><NavigationContainer headerName={this.state.headerName} navChange={this.navigationChange}/> Main page</div>
         ) : (
-          <div><NavigationContainer headerName={this.state.headerName}/><LoginContainer/></div>
+          <div><NavigationContainer headerName={this.state.headerName} navChange={this.navigationChange}/><LoginContainer/></div>
           )}
 		  </div>
     );

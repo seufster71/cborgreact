@@ -12,7 +12,7 @@ export default function NavbarMenu(props) {
           menuItems.push(<ul className='sub'></ul>);
           children = addSubMenu(menuRight[i].children);
       }
-      menuItems.push(<li key={i}><a className='page-scroll' href={href}>{innerHTML}</a>{children}</li>);
+      menuItems.push(<li key={i}><a className='page-scroll' href={href} onClick={(e) => props.navChange(e)}>{innerHTML}</a>{children}</li>);
 
 	}
 
