@@ -1,24 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { render } from 'react-dom';
 import NavigationContainer from './core/navigation/NavigationContainer.js';
 import LoginContainer from './core/usermanagement/LoginContainer.js';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import Theme from './theme.css';
 
-class App extends React.Component {
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Looks like we are in development mode!');
+}
+
+class App extends Component {
 
   constructor() {
-	    super();
-	    this.state = {
-	      headerName: 'CBorgTech',
-        menuName: 'home'
-	    };
+    super();
+    this.state = {
+      headerName: 'CBorgTech',
+      menuName: 'home'
+    };
       this.navigationChange = this.navigationChange.bind(this);
 	}
 
-  navigationChange(params) {
+  navigationChange(event) {
     console.log("nav change");
-    this.setState({menuName : 'login'});
+    if (event.target.id == 'LOGIN') {
+      this.setState({menuName : 'login'});
+    }
   }
 
   render() {
@@ -26,11 +32,11 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         {this.state.menuName == 'home' ? (
-          <div><NavigationContainer headerName={this.state.headerName} navChange={this.navigationChange}/> Main page</div>
+          <div><NavigationContainer headerName={this.state.headerName} navClick={this.navigationChange}/> Main page</div>
         ) : (
-          <div><NavigationContainer headerName={this.state.headerName} navChange={this.navigationChange}/><LoginContainer/></div>
+          <div><NavigationContainer headerName={this.state.headerName} navClick={this.navigationChange}/><LoginContainer/></div>
           )}
-		  </div>
+      </div>
     );
   }
 }

@@ -4,16 +4,17 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
     "lint": "./node_modules/.bin/eslint webpack.config.* src",
     "dev": "webpack -d --watch",
     "buildprod": "webpack -p",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
-  "author": "",
+  "author": "Edward Seufert",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.2",
     "react-dom": "^15.6.1",
@@ -35,7 +36,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "1.1.1",
     "babel-register": "6.8.0",
-    "clean-webpack-plugin": "^0.1.16",
+    "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "eslint": "^4.5.0",
     "eslint-loader": "^1.9.0",
@@ -47,6 +48,7 @@
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.7.1"
+    "webpack-dev-server": "^2.7.1",
+    "webpack-merge": "^4.1.1"
   }
 }
