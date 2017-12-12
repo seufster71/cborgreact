@@ -30,7 +30,7 @@ class App extends Component {
   render() {
     console.log("state name " + this.state.menuName);
     return (
-      <div className="container-fluid">
+      <div >
         {this.state.menuName == 'home' ? (
           <div><NavigationContainer headerName={this.state.headerName} navClick={this.navigationChange}/> Main page</div>
         ) : (
