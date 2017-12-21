@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import { render } from 'react-dom';
+import configureStore from './store/configureStore';
+import {Provider} from 'react-redux';
+import {initApp} from './core/common/appPrefActions';
 import NavigationContainer from './core/navigation/NavigationContainer.js';
 import LoginContainer from './core/usermanagement/LoginContainer.js';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
@@ -8,6 +11,9 @@ import Theme from './theme.css';
 if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!');
 }
+
+const store = configureStore();
+store.dispatch(initApp());
 
 class App extends Component {
 
@@ -41,4 +47,4 @@ class App extends Component {
   }
 }
 
-render( <App/>, document.getElementById('app') );
+render( <Provider store={store}><App/></Provider>, document.getElementById('app') );

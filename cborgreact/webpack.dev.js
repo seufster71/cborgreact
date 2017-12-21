@@ -8,7 +8,7 @@ module.exports = merge(common, {
   devServer: {
     inline: true,
     contentBase: './src/main/resources/static',
-    proxy: { "/api/**": { target: 'http://localhost:8090', secure: false }  }
+    proxy: [{ context: ["/api/**","/libs/**"],target: 'http://localhost:8090' }]
   },
   output: {
     path: BUILD_DIR,
