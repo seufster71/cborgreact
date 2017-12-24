@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
 import {initApp} from './core/common/appPrefActions';
+import {getMenus} from './core/common/appMenuActions';
 import NavigationContainer from './core/navigation/NavigationContainer.js';
 import LoginContainer from './core/usermanagement/LoginContainer.js';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const store = configureStore();
 store.dispatch(initApp());
+store.dispatch(getMenus());
 
 class App extends Component {
 
