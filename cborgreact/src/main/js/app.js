@@ -15,7 +15,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 const store = configureStore();
 store.dispatch(initApp());
-store.dispatch(getMenus());
 
 class App extends Component {
 
