@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function NavbarMenu(props) {
 
   let menuItems = [];
-  var menuRight = props.menus.PUBLIC_MENU_RIGHT;
+  var menuRight = props.menus[props.menuName];
 	for (var i in menuRight){
       const href = menuRight[i].values[0].href;
 			const innerHTML = menuRight[i].values[0].value;
@@ -30,6 +30,7 @@ function addSubMenu(child){
 }
 
 NavbarMenu.propTypes = {
+  menuName: PropTypes.string.isRequired,
 	menus: PropTypes.object.isRequired,
 	navClick: PropTypes.func.isRequired
 };

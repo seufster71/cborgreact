@@ -4,6 +4,10 @@ import rootReducer from '../reducers/index';
 import thunk from 'redux-thunk';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 
-export default function configureStore(initialState) {
+export default function configureStore() {
+  const initialState = {
+    appPrefs:{lang: localStorage.getItem('lang'), headerName: 'ToastHub'},
+    session:{sessionActive: false}
+  }
   return createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk, reduxImmutableStateInvariant())) );
 }

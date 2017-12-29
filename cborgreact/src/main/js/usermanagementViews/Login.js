@@ -6,7 +6,7 @@ import CheckBox from '../common/CheckBox.js';
 import Link from '../common/Link.js';
 
 export default function Login({view, loginFields, loginTexts, loginLabels, onChangeLogin,
-  registrationFields, registrationTexts, registrationLabels, onChangeRegistration, fieldChangeEvent, buttonClick}) {
+  registrationFields, registrationTexts, registrationLabels, onChangeRegistration, fieldChangeEvent, fieldBlurEvent, buttonClick}) {
 
   let items = [];
   let formId = "login-form";
@@ -15,7 +15,7 @@ export default function Login({view, loginFields, loginTexts, loginLabels, onCha
     // fields
     for (var i = 0; i < loginFields.length; i++) {
       if (loginFields[i].fieldType === "TXT") {
-        items.push(<TextInput key={loginFields[i].name} id={loginFields[i].name} name={loginFields[i].name} placeHolder={loginFields[i].label} inputType={loginFields[i].htmlType} onChange={fieldChangeEvent}/>);
+        items.push(<TextInput key={loginFields[i].name} id={loginFields[i].name} name={loginFields[i].name} placeHolder={loginFields[i].label} inputType={loginFields[i].htmlType} onBlur={fieldBlurEvent}/>);
       }
     }
     // Remember me
@@ -90,5 +90,6 @@ Login.propTypes = {
   onChangeLogin: PropTypes.func,
   onChangeRegistration: PropTypes.func,
   fieldChangeEvent: PropTypes.func,
+  fieldBlurEvent: PropTypes.func,
   buttonClick: PropTypes.func
 };

@@ -8,8 +8,8 @@ export default function Navigation(props) {
   return (
     <nav id="mainNav" className="navbar navbar-Public navbar-custom navbar-fixed-top affix">
      <div className="container">
-       <NavbarHeader headerName={props.headerName}/>
-       <NavbarMenu menus={props.menus} navClick={props.navClick}/>
+       <NavbarHeader headerName={props.appPrefs.headerName}/>
+       <NavbarMenu menus={props.menus} menuName={props.menuName} navClick={props.navClick}/>
      </div>
     </nav>
 
@@ -17,7 +17,8 @@ export default function Navigation(props) {
 }
 
 Navigation.propTypes = {
-	headerName: PropTypes.string.isRequired,
+	appPrefs: PropTypes.object.isRequired,
 	menus: PropTypes.object.isRequired,
+  menuName: PropTypes.string.isRequired,
 	navClick: PropTypes.func.isRequired
 };

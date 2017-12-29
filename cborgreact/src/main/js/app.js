@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import { render } from 'react-dom';
 import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
-import {initApp} from './core/common/appPrefActions';
-import {getMenus} from './core/common/appMenuActions';
-import NavigationContainer from './core/navigation/NavigationContainer.js';
-import LoginContainer from './core/usermanagement/LoginContainer.js';
+import {initPublic} from './core/common/appPrefActions';
+import {sessionCheck} from './member/session/sessionActions';
+import PageContainer from './PageContainer.js';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import Theme from './theme.css';
 
@@ -14,38 +13,26 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const store = configureStore();
-store.dispatch(initApp());
+store.dispatch(initPublic());
+store.dispatch(sessionCheck());
+
+window.onbeforeunload = () => {
+  localStorage.setItem('lang',store.getState().appPrefs.lang);
+}
 
 class App extends Component {
 
   constructor() {
     super();
-    this.state = {
-      headerName: 'CBorgTech',
-      menuName: 'home'
-    };
-      this.navigationChange = this.navigationChange.bind(this);
+
 	}
 
-  navigationChange(event) {
-    console.log("nav change");
-    if (event.target.id == 'LOGIN') {
-      this.setState({menuName : 'login'});
-    }
-  }
-
   render() {
-    console.log("state name " + this.state.menuName);
     return (
-      <div >
-        {this.state.menuName == 'home' ? (
-          <div><NavigationContainer headerName={this.state.headerName} navClick={this.navigationChange}/> Main page</div>
-        ) : (
-          <div><NavigationContainer headerName={this.state.headerName} navClick={this.navigationChange}/><LoginContainer/></div>
-          )}
-      </div>
+      <PageContainer />
     );
   }
 }
+
 
 render( <Provider store={store}><App/></Provider>, document.getElementById('app') );
