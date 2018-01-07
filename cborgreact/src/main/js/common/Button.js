@@ -6,9 +6,7 @@ const Button = ({name, value, onClick}) => {
 
   return (
     <div className={wrapperClass}>
-      <div className="col-sm-6 col-sm-offset-3">
         <input type="submit" name={name} id={name} className="form-control btn btn-login" value={value} onClick={onClick}/>
-      </div>
     </div>
   );
 };

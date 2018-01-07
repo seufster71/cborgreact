@@ -15,7 +15,6 @@ export default function sessionReducer(state = {}, action) {
     }
     case 'SAVE_AUTHENTICATION': {
       let myState = {};
-      debugger;
       if (action.responseJson != null && action.responseJson.params != null
         && action.responseJson.params.status != null && action.responseJson.params.status.info != null) {
         let infos = action.responseJson.params.status.info;
