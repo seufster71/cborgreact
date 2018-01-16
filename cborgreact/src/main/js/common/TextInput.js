@@ -9,12 +9,13 @@ const TextInput = ({name, label, onChange, onBlur, placeHolder, value, error, in
   }
   if (error && error.length > 0) {
     wrapperClass += " " + 'has-error';
-    errorLabel = <label id={name + "-error"} className="control-label has-error" htmlFor={name}>Input error</label>;
+    errorLabel = <label id={name + "-error"} className="control-label has-error" htmlFor={name}>{error}</label>;
   }
 
   return (
     <div className={wrapperClass}>
       <input type={inputType} className="form-control" autoCapitalize="off" onChange={onChange} onBlur={onBlur} id={name} name={name} placeholder={placeHolder}/>
+      {errorLabel}
     </div>
   );
 };

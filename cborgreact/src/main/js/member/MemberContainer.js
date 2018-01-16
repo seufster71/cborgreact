@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as memberActions from './memberActions';
+import * as appPrefActions from '../core/common/appPrefActions';
+
 
 class MemberContainer extends Component {
 	constructor(props) {
@@ -10,15 +11,21 @@ class MemberContainer extends Component {
 
 	}
 
+	componentDidMount() {
+		console.log('member did mount.');
+		this.props.actions.initMember();
+	}
+
   render() {
       return (<div> Member Page </div>);
   }
 }
+
 MemberContainer.propTypes = {
-	appPrefs: PropTypes.object.isRequired,
-	menus: PropTypes.object,
+	appPrefs: PropTypes.object,
 	lang: PropTypes.string,
-	appGlobal: PropTypes.object
+	appGlobal: PropTypes.object,
+	actions: PropTypes.object
 };
 
 function mapStateToProps(state, ownProps) {
@@ -26,7 +33,7 @@ function mapStateToProps(state, ownProps) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions:bindActionCreators(memberActions,dispatch) };
+  return { actions:bindActionCreators(appPrefActions,dispatch) };
 }
 
-export default connect(mapStateToProps)(MemberContainer);
+export default connect(mapStateToProps,mapDispatchToProps)(MemberContainer);

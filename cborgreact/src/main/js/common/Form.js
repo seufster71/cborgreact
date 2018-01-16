@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import TextInput from './TextInput.js';
+import TextInput from './TextInput';
 
 const Form = (props) => {
   let items = [];
