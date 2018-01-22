@@ -18,9 +18,9 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
     for (var i = 0; i < loginFields.length; i++) {
       if (loginFields[i].fieldType === "TXT") {
         items.push(<TextInput
-          key={loginFields[i].name}
-          id={loginFields[i].name}
-          name={loginFields[i].name}
+          key={'LOGIN_FORM-'+loginFields[i].name}
+          id={'LOGIN_FORM-'+loginFields[i].name}
+          name={'LOGIN_FORM-'+loginFields[i].name}
           placeHolder={loginFields[i].label}
           inputType={loginFields[i].htmlType}
           onBlur={fieldBlurEvent}/>);
@@ -63,9 +63,9 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
     for (var f = 0; f < registrationFields.length; f++) {
       if (registrationFields[f].fieldType === "TXT") {
         items.push(<TextInput
-          key={registrationFields[f].name}
-          id={registrationFields[f].name}
-          name={registrationFields[f].name}
+          key={'REGISTRATION_FORM-'+registrationFields[f].name}
+          id={'REGISTRATION_FORM-'+registrationFields[f].name}
+          name={'REGISTRATION_FORM-'+registrationFields[f].name}
           placeHolder={registrationFields[f].label}
           inputType={registrationFields[f].htmlType}
           error={errorMap[registrationFields[f].name]}
@@ -77,9 +77,9 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
           items.push(<PasswordMeter
             key="{registrationFields[f].name}-METER"
             name={registrationFields[f].name}
-            alphaCheckCss="has-error"
+            alphaCheckCss="text-danger"
             alphaCheckValue={registrationTexts.REGISTRATION_FORM_ALPHA_CHECK.value}
-            capitalCheckCss="alert alert-success"
+            capitalCheckCss="text-success"
             capitalCheckValue={registrationTexts.REGISTRATION_FORM_CAPITAL_CHECK.value}
             numberCheckCss="has-error"
             numberCheckValue={registrationTexts.REGISTRATION_FORM_NUMBER_CHECK.value}

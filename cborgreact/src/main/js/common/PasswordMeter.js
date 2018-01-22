@@ -8,19 +8,19 @@ const PasswordMeter = ({name, alphaCheckCss, alphaCheckValue,
   let wrapperId = name.concat('-PASSWORD_CHART_WRAP');
   let alphaCheckTxt = '';
   if (alphaCheckValue != null ) {
-    alphaCheckTxt = <div className={alphaCheckCss} >{alphaCheckValue}</div>;
+    alphaCheckTxt = <div className={alphaCheckCss} ><label>{alphaCheckValue} <span className="glyphicon glyphicon-ok"/></label></div>;
   }
   let capitalCheckTxt = '';
   if (capitalCheckValue != null) {
-    capitalCheckTxt = <div className={capitalCheckCss} >{capitalCheckValue}</div>;
+    capitalCheckTxt = <div className={capitalCheckCss} >{capitalCheckValue} <span className="glyphicon glyphicon-ok"/></div>;
   }
   let numberCheckTxt = '';
   if (numberCheckValue != null) {
-    numberCheckTxt = <div className={numberCheckCss} >{numberCheckValue}</div>;
+    numberCheckTxt = <div className={numberCheckCss} >{numberCheckValue} <span className="glyphicon glyphicon-ok"/></div>;
   }
   let specialCheckTxt = '';
   if (specialCheckValue != null) {
-    specialCheckValue = <div className={specialCheckCss} >{specialCheckValue}</div>;
+    specialCheckValue = <div className={specialCheckCss} >{specialCheckValue} <span className="glyphicon glyphicon-ok"/></div>;
   }
   let countCheckTxt = '';
   if (countCheckValue != null) {
@@ -28,7 +28,7 @@ const PasswordMeter = ({name, alphaCheckCss, alphaCheckValue,
   }
 
   return (
-    <div id={wrapperId} className={wrapperCss}>
+    <div id={wrapperId} >
       <div className="row">
         {alphaCheckTxt}
         {capitalCheckTxt}
