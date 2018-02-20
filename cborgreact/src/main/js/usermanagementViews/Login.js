@@ -12,7 +12,10 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
 
   let items = [];
   let formId = "login-form";
+  let loginActive = "";
+  let regActive = "";
   if (view === 'login') {
+    loginActive = "active";
     // LOGIN_FORM
     // fields
     for (var i = 0; i < loginFields.length; i++) {
@@ -59,6 +62,7 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
   } else {
     // REGISTRATION_FORM
     // fields
+    regActive = "active";
     formId = "registration-form";
     for (var f = 0; f < registrationFields.length; f++) {
       if (registrationFields[f].fieldType === "TXT") {
@@ -73,19 +77,39 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
       }
       if (registrationFields[f].htmlType === "password") {
         if (registrationFields[f].optionalParams == null) {
+          let alphaCheckCss = "text-success";
+          if (errorMap.REGISTRATION_FORM_ALPHA_CHECK != null && errorMap.REGISTRATION_FORM_ALPHA_CHECK === "ERROR"){
+            alphaCheckCss = "text-danger";
+          }
+          let capitalCheckCss = "text-success";
+          if (errorMap.REGISTRATION_FORM_CAPITAL_CHECK != null && errorMap.REGISTRATION_FORM_CAPITAL_CHECK === "ERROR"){
+            capitalCheckCss = "text-danger";
+          }
+          let numberCheckCss = "text-success";
+          if (errorMap.REGISTRATION_FORM_NUMBER_CHECK != null && errorMap.REGISTRATION_FORM_NUMBER_CHECK === "ERROR"){
+            numberCheckCss = "text-danger";
+          }
+          let specialCheckCss = "text-success";
+          if (errorMap.REGISTRATION_FORM_SPECIAL_CHECK != null && errorMap.REGISTRATION_FORM_SPECIAL_CHECK === "ERROR"){
+            specialCheckCss = "text-danger";
+          }
+          let countCheckCss = "text-success";
+          if (errorMap.REGISTRATION_FORM_COUNT_CHECK != null && errorMap.REGISTRATION_FORM_COUNT_CHECK === "ERROR"){
+            countCheckCss = "text-danger";
+          }
           // show password requirements
           items.push(<PasswordMeter
             key="{registrationFields[f].name}-METER"
             name={registrationFields[f].name}
-            alphaCheckCss="text-danger"
+            alphaCheckCss={alphaCheckCss}
             alphaCheckValue={registrationTexts.REGISTRATION_FORM_ALPHA_CHECK.value}
-            capitalCheckCss="text-success"
+            capitalCheckCss={capitalCheckCss}
             capitalCheckValue={registrationTexts.REGISTRATION_FORM_CAPITAL_CHECK.value}
-            numberCheckCss="has-error"
+            numberCheckCss={numberCheckCss}
             numberCheckValue={registrationTexts.REGISTRATION_FORM_NUMBER_CHECK.value}
-            specialCheckCss="has-error"
+            specialCheckCss={specialCheckCss}
             specialCheckValue={registrationTexts.REGISTRATION_FORM_SPECIAL_CHECK.value}
-            countCheckCss="has-error"
+            countCheckCss={countCheckCss}
             countCheckValue={registrationTexts.REGISTRATION_FORM_COUNT_CHECK.value} />);
         } else if (registrationFields[f].optionalParams != null) {
           // show password check match
@@ -113,13 +137,13 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
             <div className="panel panel-login">
               <div className="panel-heading">
                 <div className="row">
-                  <div className="col-xs-6"><a href="#" className="active" onClick={onChangeLogin} id={loginTexts.LOGIN_FORM_HEADER.name}>{loginTexts.LOGIN_FORM_HEADER.value}</a></div>
-                  <div className="col-xs-6"><a href="#" className="active" onClick={onChangeRegistration} id="Reg-link">Registration</a></div>
+                  <div className="col-xs-6"><a href="#" className={loginActive} onClick={onChangeLogin} id={loginTexts.LOGIN_FORM_HEADER.name}>{loginTexts.LOGIN_FORM_HEADER.value}</a></div>
+                  <div className="col-xs-6"><a href="#" className={regActive} onClick={onChangeRegistration} id="Reg-link">Registration</a></div>
                 </div>
               </div>
             </div>
             <div id="login-status" role="alert" />
-            <div className="panel-body">
+            <div className="panel-body panel-body-login">
               <div className="row">
                 <div className="col-lg-12">
                   <div id={formId} >
