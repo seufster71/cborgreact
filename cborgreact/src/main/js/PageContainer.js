@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import NavigationContainer from './core/navigation/NavigationContainer';
 import LoginContainer from './core/usermanagement/LoginContainer';
-import StatusContainer from './core/status/StatusContainer';
+import StatusView from './coreWeb/status/StatusView';
 import MemberContainer from './member/MemberContainer';
 import {bindActionCreators} from 'redux';
 import * as navActions from './core/navigation/navActions';
@@ -23,11 +23,11 @@ class PageContainer extends Component {
 
   render() {
     if (this.props.navigation.currentPage == 'login') {
-      return (<div><NavigationContainer navClick={this.navigationChange} menuName="PUBLIC_MENU_RIGHT"/><StatusContainer/><LoginContainer/></div>);
+      return (<div><NavigationContainer navClick={this.navigationChange} menuName="PUBLIC_MENU_RIGHT"/><StatusView/><LoginContainer/></div>);
     } else if (this.props.navigation.currentPage == 'member') {
-      return (<div><NavigationContainer navClick={this.navigationChange} menuName="MEMBER_MENU_RIGHT"/><StatusContainer/><MemberContainer/></div>);
+      return (<div><NavigationContainer navClick={this.navigationChange} menuName="MEMBER_MENU_RIGHT"/><StatusView/><MemberContainer/></div>);
     } else {
-      return (<div><NavigationContainer navClick={this.navigationChange} menuName="PUBLIC_MENU_RIGHT"/><StatusContainer/>Main Page</div>);
+      return (<div><NavigationContainer navClick={this.navigationChange} menuName="PUBLIC_MENU_RIGHT"/><StatusView/>Main Page</div>);
     }
 
   }
