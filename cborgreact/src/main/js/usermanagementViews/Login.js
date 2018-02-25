@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextInput from '../common/TextInput';
-import Button from '../common/Button';
-import CheckBox from '../common/CheckBox';
-import Link from '../common/Link';
-import PasswordMeter from '../common/PasswordMeter';
+import TextInput from '../coreWeb/common/TextInput';
+import Button from '../coreWeb/common/Button';
+import CheckBox from '../coreWeb/common/CheckBox';
+import Link from '../coreWeb/common/Link';
+import PasswordMeter from '../coreWeb/common/PasswordMeter';
 
 export default function Login({view, errorMap, loginFields, loginTexts, loginLabels, onChangeLogin,
   registrationFields, registrationTexts, registrationLabels, onChangeRegistration, fieldChangeEvent,
