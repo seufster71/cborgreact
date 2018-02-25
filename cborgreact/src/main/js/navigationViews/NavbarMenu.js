@@ -10,7 +10,7 @@ export default function NavbarMenu(props) {
 			const innerHTML = menuRight[i].values[0].value;
       let children = "";
       if (menuRight[i].children != null) {
-          menuItems.push(<ul className="sub"/>);
+        //  menuItems.push(<ul className="sub"/>);
           children = addSubMenu(menuRight[i].children);
       }
       menuItems.push(<li key={menuRight[i].menuId}><a id={menuRight[i].code} className="page-scroll" href={'#' + menuRight[i].code} onClick={props.navClick}>{innerHTML}</a>{children}</li>);

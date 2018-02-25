@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import NavigationContainer from './core/navigation/NavigationContainer.js';
-import LoginContainer from './core/usermanagement/LoginContainer.js';
+import NavigationContainer from './core/navigation/NavigationContainer';
+import LoginContainer from './core/usermanagement/LoginContainer';
+import StatusContainer from './core/status/StatusContainer';
 import MemberContainer from './member/MemberContainer';
 import {bindActionCreators} from 'redux';
-import * as appPrefActions from './core/common/appPrefActions';
+import * as navActions from './core/navigation/navActions';
 
 
 class PageContainer extends Component {
@@ -21,12 +22,12 @@ class PageContainer extends Component {
   }
 
   render() {
-    if (this.props.appPrefs.currentPage == 'login') {
-      return (<div><NavigationContainer navClick={this.navigationChange} menuName="PUBLIC_MENU_RIGHT"/><LoginContainer/></div>);
-    } else if (this.props.appPrefs.currentPage == 'member') {
-      return (<div><NavigationContainer navClick={this.navigationChange} menuName="MEMBER_MENU_RIGHT"/><MemberContainer/></div>);
+    if (this.props.navigation.currentPage == 'login') {
+      return (<div><NavigationContainer navClick={this.navigationChange} menuName="PUBLIC_MENU_RIGHT"/><StatusContainer/><LoginContainer/></div>);
+    } else if (this.props.navigation.currentPage == 'member') {
+      return (<div><NavigationContainer navClick={this.navigationChange} menuName="MEMBER_MENU_RIGHT"/><StatusContainer/><MemberContainer/></div>);
     } else {
-      return (<div><NavigationContainer navClick={this.navigationChange} menuName="PUBLIC_MENU_RIGHT"/>Main Page</div>);
+      return (<div><NavigationContainer navClick={this.navigationChange} menuName="PUBLIC_MENU_RIGHT"/><StatusContainer/>Main Page</div>);
     }
 
   }
@@ -34,17 +35,18 @@ class PageContainer extends Component {
 
 PageContainer.propTypes = {
 	appPrefs: PropTypes.object.isRequired,
+	navigation: PropTypes.object.isRequired,
 	menus: PropTypes.object,
 	lang: PropTypes.string,
 	actions: PropTypes.object
 };
 
 function mapStateToProps(state, ownProps) {
-  return {menus:state.appMenus.menus, lang:state.lang, appPrefs:state.appPrefs};
+  return {menus:state.appMenus.menus, lang:state.lang, appPrefs:state.appPrefs, navigation:state.navigation};
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions:bindActionCreators(appPrefActions,dispatch) };
+  return { actions:bindActionCreators(navActions,dispatch) };
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(PageContainer);

@@ -29,13 +29,6 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
           onBlur={fieldBlurEvent}/>);
       }
     }
-    // Remember me
-    items.push(<CheckBox
-      key={loginTexts.LOGIN_FORM_REMEMBER_ME.name}
-      id={loginTexts.LOGIN_FORM_REMEMBER_ME.name}
-      name={loginTexts.LOGIN_FORM_REMEMBER_ME.name}
-      label={loginTexts.LOGIN_FORM_REMEMBER_ME.value}
-      onChange={fieldChangeEvent}/>);
     // buttons
     for (var l = 0; l < loginLabels.length; l++) {
       if (loginLabels[l].rendered) {
@@ -44,7 +37,8 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
           id={loginLabels[l].name}
           name={loginLabels[l].name}
           value={loginLabels[l].value}
-          onClick={buttonClick}/>);
+          onClick={buttonClick}
+          className="form-control"/>);
       }
     }
     // Forgot Password
@@ -53,12 +47,7 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
       id={loginTexts.LOGIN_FORM_FORGOT_PASSWORD.name}
       name={loginTexts.LOGIN_FORM_FORGOT_PASSWORD.name}
       label={loginTexts.LOGIN_FORM_FORGOT_PASSWORD.value}/>);
-    // Change Password
-    items.push(<Link
-      key={loginTexts.LOGIN_FORM_CHANGE_PASSWORD.name}
-      id={loginTexts.LOGIN_FORM_CHANGE_PASSWORD.name}
-      name={loginTexts.LOGIN_FORM_CHANGE_PASSWORD.name}
-      label={loginTexts.LOGIN_FORM_CHANGE_PASSWORD.value}/>);
+
   } else {
     // REGISTRATION_FORM
     // fields
@@ -124,7 +113,8 @@ export default function Login({view, errorMap, loginFields, loginTexts, loginLab
           id={registrationLabels[g].name}
           name={registrationLabels[g].name}
           value={registrationLabels[g].value}
-          onClick={buttonClick}/>);
+          onClick={buttonClick}
+          className="form-control"/>);
       }
     }
   }
