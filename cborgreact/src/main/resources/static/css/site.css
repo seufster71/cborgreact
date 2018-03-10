@@ -114,3 +114,6 @@ header .intro-text {
 	background-color: #1CA347;
 	border-color: #1CA347;
 }
+.alert {
+	margin: 0px !important;
+}
