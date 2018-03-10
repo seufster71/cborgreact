@@ -1,4 +1,4 @@
-import callService from '../core/api/Api';
+import callService from '../core/api/api';
 
 // actions
 export function loadInitMember(responseJson) {
