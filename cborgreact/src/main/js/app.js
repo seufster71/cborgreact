@@ -1,5 +1,8 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+//hectors notes: minor changes
+// import React, { Component } from "react";
+// import { render } from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import { initPublic } from "./core/common/appPrefActions";
@@ -20,19 +23,20 @@ window.onbeforeunload = () => {
   localStorage.setItem("lang", store.getState().appPrefs.lang);
 };
 
-class App extends Component {
-  constructor() {
-    super();
-  }
+//hectors note: trying something - reducing lines of code
+// class App extends Component {
+//   constructor() {
+//     super();
+//   }
+//
+//   render() {
+//     return <PageContainer />;
+//   }
+// }
 
-  render() {
-    return <PageContainer />;
-  }
-}
-
-render(
+ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <PageContainer />
   </Provider>,
   document.getElementById("app")
 );

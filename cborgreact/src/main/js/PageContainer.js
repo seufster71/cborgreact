@@ -50,7 +50,8 @@ class PageContainer extends Component {
             navClick={this.navigationChange}
             menuName="PUBLIC_MENU_RIGHT"
           />
-          <StatusView />Test Change
+          <StatusView />
+          <h1>Test Change X</h1>
         </div>
       );
     }
