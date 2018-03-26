@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import NavigationContainer from "./core/navigation/NavigationContainer";
-import LoginContainer from "./core/usermanagement/LoginContainer";
+import NavigationContainer from "./core/navigation/navigation-container";
+import LoginContainer from "./core/usermanagement/login-container";
 import StatusView from "./coreWeb/status/StatusView";
 import MemberContainer from "./member/MemberContainer";
 import { bindActionCreators } from "redux";
-import * as navActions from "./core/navigation/navActions";
+import * as navActions from "./core/navigation/nav-actions";
 
 class PageContainer extends Component {
   constructor(props) {
