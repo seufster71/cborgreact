@@ -10,3 +10,6 @@
 [submodule "cborgreact/src/main/js/memberView"]
 	path = cborgreact/src/main/js/memberView
 	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-reactweb.git
+[submodule "cborgreact/src/main/js/admin"]
+	path = cborgreact/src/main/js/admin
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-admin-react.git
