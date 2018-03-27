@@ -4,3 +4,6 @@
 [submodule "cborgreact/src/main/js/coreView"]
 	path = cborgreact/src/main/js/coreView
 	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-core-reactweb.git
+[submodule "cborgreact/src/main/js/member"]
+	path = cborgreact/src/main/js/member
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-react.git
