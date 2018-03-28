@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import NavigationContainer from "./core/navigation/navigation-container";
 import LoginContainer from "./core/usermanagement/login-container";
-import StatusView from "./coreWeb/status/StatusView";
-import MemberContainer from "./member/MemberContainer";
+import StatusView from "./coreView/status/status-view";
+import MemberContainer from "./member/member-container";
 import { bindActionCreators } from "redux";
 import * as navActions from "./core/navigation/nav-actions";
 

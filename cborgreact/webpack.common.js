@@ -3,7 +3,7 @@ const path = require('path');
 const APP_DIR = path.resolve(__dirname, 'src/main/js');
 
 module.exports = {
-  entry: { app: APP_DIR + '/app.js' },
+  entry: { app: APP_DIR + '/App.js' },
   module : {
     loaders : [
       {
