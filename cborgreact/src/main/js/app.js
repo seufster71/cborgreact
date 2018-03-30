@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import { initPublic } from "./core/common/apppref-actions";
 import { sessionCheck } from "./member/session/session-actions";
 import PageContainer from "./PageContainer.js";
@@ -33,7 +34,9 @@ window.onbeforeunload = () => {
 
 render(
   <Provider store={store}>
-    <PageContainer />
+    <BrowserRouter>
+      <PageContainer />
+    </BrowserRouter>
   </Provider>,
   document.getElementById("app")
 );
@@ -41,4 +44,7 @@ render(
 export function getDebugClient() {
   let state = store.getState();
   return state.appPrefs.debugClient;
+}
+export function getHost() {
+  return "";
 }

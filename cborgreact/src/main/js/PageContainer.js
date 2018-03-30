@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Switch, Route, withRouter } from "react-router-dom";
 import NavigationContainer from "./core/navigation/navigation-container";
 import LoginContainer from "./core/usermanagement/login-container";
 import StatusView from "./coreView/status/status-view";
 import MemberContainer from "./member/member-container";
+import PublicContainer from "./public/public-container";
 import { bindActionCreators } from "redux";
 import * as navActions from "./core/navigation/nav-actions";
+import fuLogger from './core/common/fu-logger';
 
 class PageContainer extends Component {
   constructor(props) {
@@ -21,27 +24,10 @@ class PageContainer extends Component {
   }
 
   render() {
-    if (this.props.navigation.currentPage == "login") {
+    fuLogger.log({level:'TRACE',loc:'PageContainer::render',msg:"page"});
+    if (this.props.session.sessionActive == true) {
       return (
-        <div>
-          <NavigationContainer
-            navClick={this.navigationChange}
-            menuName="PUBLIC_MENU_RIGHT"
-          />
-          <StatusView />
-          <LoginContainer />
-        </div>
-      );
-    } else if (this.props.navigation.currentPage == "member") {
-      return (
-        <div>
-          <NavigationContainer
-            navClick={this.navigationChange}
-            menuName="MEMBER_MENU_RIGHT"
-          />
-          <StatusView />
-          <MemberContainer />
-        </div>
+        <MemberContainer />
       );
     } else {
       return (
@@ -51,7 +37,11 @@ class PageContainer extends Component {
             menuName="PUBLIC_MENU_RIGHT"
           />
           <StatusView />
-          <h1>Test Change X</h1>
+          <Switch>
+            <Route exact path="/" component={PublicContainer}/>
+            <Route path="/login" component={LoginContainer}/>
+            <Route path="/about" component={PublicContainer}/>
+          </Switch>
         </div>
       );
     }
@@ -63,7 +53,8 @@ PageContainer.propTypes = {
   navigation: PropTypes.object.isRequired,
   menus: PropTypes.object,
   lang: PropTypes.string,
-  actions: PropTypes.object
+  actions: PropTypes.object,
+  session: PropTypes.object
 };
 
 function mapStateToProps(state, ownProps) {
@@ -71,7 +62,8 @@ function mapStateToProps(state, ownProps) {
     menus: state.appMenus.menus,
     lang: state.lang,
     appPrefs: state.appPrefs,
-    navigation: state.navigation
+    navigation: state.navigation,
+    session:state.session
   };
 }
 
@@ -79,4 +71,4 @@ function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(navActions, dispatch) };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PageContainer));

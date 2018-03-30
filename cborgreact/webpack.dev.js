@@ -7,6 +7,7 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     inline: true,
+    historyApiFallback: true,
     contentBase: './src/main/resources/static',
     proxy: [{ context: ["/api/**","/libs/**"],target: 'http://localhost:8090' }]
   },
