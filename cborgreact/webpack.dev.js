@@ -14,6 +14,6 @@ module.exports = merge(common, {
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js',
-    publicPath: 'build/'
+    publicPath: '/build/'
   },
 });

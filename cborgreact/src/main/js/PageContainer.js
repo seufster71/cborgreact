@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { Switch, Route, withRouter} from "react-router-dom";
 import NavigationContainer from "./core/navigation/navigation-container";
 import LoginContainer from "./core/usermanagement/login-container";
 import StatusView from "./coreView/status/status-view";
 import MemberContainer from "./member/member-container";
 import PublicContainer from "./public/public-container";
+import AdminContainer from "./admin/admin-container";
 import { bindActionCreators } from "redux";
 import * as navActions from "./core/navigation/nav-actions";
 import fuLogger from './core/common/fu-logger';
@@ -26,8 +27,13 @@ class PageContainer extends Component {
   render() {
     fuLogger.log({level:'TRACE',loc:'PageContainer::render',msg:"page"});
     if (this.props.session.sessionActive == true) {
-      return (
-        <MemberContainer />
+     return (
+      <Switch>
+        <Route exact path="/" component={MemberContainer}/>
+        <Route path="/member" component={MemberContainer}/>
+        <Route path="/admin" component={AdminContainer} />
+      </Switch>
+
       );
     } else {
       return (
@@ -54,7 +60,8 @@ PageContainer.propTypes = {
   menus: PropTypes.object,
   lang: PropTypes.string,
   actions: PropTypes.object,
-  session: PropTypes.object
+  session: PropTypes.object,
+  history: PropTypes.object
 };
 
 function mapStateToProps(state, ownProps) {
