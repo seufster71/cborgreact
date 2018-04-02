@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Switch, Route, withRouter} from "react-router-dom";
-import NavigationContainer from "./core/navigation/navigation-container";
+import NavigationContainer from "./coreView/navigation/navigation-view";
 import LoginContainer from "./core/usermanagement/login-container";
 import StatusView from "./coreView/status/status-view";
 import MemberContainer from "./member/member-container";
@@ -30,18 +30,34 @@ class PageContainer extends Component {
      return (
       <Switch>
         <Route exact path="/" component={MemberContainer}/>
-        <Route path="/member" component={MemberContainer}/>
-        <Route path="/admin" component={AdminContainer} />
+        <Route exact path="/member" component={MemberContainer}/>
+        <Route path="/member-acquaintances" component={MemberContainer}/>
+        <Route path="/member-groups" component={MemberContainer}/>
+        <Route path="/member-notes" component={MemberContainer}/>
+        <Route path="/member-shopping" component={MemberContainer}/>
+        <Route path="/member-profile" component={MemberContainer}/>
+        <Route path="/member-logout" component={MemberContainer}/>
+        <Route path="/admin" component={AdminContainer}/>
+        <Route path="/admin-bugs" component={AdminContainer}/>
+        <Route path="/admin-changerequests" component={AdminContainer}/>
+        <Route path="/admin-users" component={AdminContainer}/>
+        <Route path="/admin-roles" component={AdminContainer}/>
+        <Route path="/admin-permissions" component={AdminContainer}/>
+        <Route path="/admin-preferences" component={AdminContainer}/>
+        <Route path="/admin-language" component={AdminContainer}/>
+        <Route path="/admin-category" component={AdminContainer}/>
+        <Route path="/admin-status" component={AdminContainer}/>
+        <Route path="/admin-service" component={AdminContainer}/>
+        <Route path="/admin-menu" component={AdminContainer}/>
+        <Route path="/admin-system" component={AdminContainer}/>
       </Switch>
 
       );
     } else {
       return (
         <div>
-          <NavigationContainer
-            navClick={this.navigationChange}
-            menuName="PUBLIC_MENU_RIGHT"
-          />
+          <NavigationContainer appPrefs={this.props.appPrefs}
+          menus={this.props.appMenus.PUBLIC_MENU_RIGHT} />
           <StatusView />
           <Switch>
             <Route exact path="/" component={PublicContainer}/>
@@ -57,7 +73,7 @@ class PageContainer extends Component {
 PageContainer.propTypes = {
   appPrefs: PropTypes.object.isRequired,
   navigation: PropTypes.object.isRequired,
-  menus: PropTypes.object,
+  appMenus: PropTypes.object,
   lang: PropTypes.string,
   actions: PropTypes.object,
   session: PropTypes.object,
@@ -66,7 +82,7 @@ PageContainer.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    menus: state.appMenus.menus,
+    appMenus: state.appMenus,
     lang: state.lang,
     appPrefs: state.appPrefs,
     navigation: state.navigation,
