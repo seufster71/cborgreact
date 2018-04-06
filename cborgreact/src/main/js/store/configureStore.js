@@ -6,7 +6,13 @@ import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
 
 export default function configureStore() {
   const initialState = {
-    appPrefs: { lang: localStorage.getItem("lang"), headerName: "ToastHub", codeType : 'WEB', debugClient: true},
+    appPrefs: { lang: localStorage.getItem("lang"), 
+      headerName: "ToastHub",
+      codeType : 'WEB',
+      debugClient: true,
+      memberMenu:'MEMBER_MENU_TOP',
+      adminMenu:'ADMIN_MENU_TOP'
+    },
     navigation: { currentPage: "home" },
     session: { sessionActive: false },
     status: { error: null, info: null, warn: null }

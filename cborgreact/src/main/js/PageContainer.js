@@ -43,13 +43,18 @@ class PageContainer extends Component {
         <Route path="/admin-users" component={AdminContainer}/>
         <Route path="/admin-roles" component={AdminContainer}/>
         <Route path="/admin-permissions" component={AdminContainer}/>
-        <Route path="/admin-preferences" component={AdminContainer}/>
+        <Route path="/admin-prefmgmt" component={AdminContainer}/>
+        <Route path="/admin-prefpublic" component={AdminContainer}/>
+        <Route path="/admin-prefmember" component={AdminContainer}/>
+        <Route path="/admin-prefadmin" component={AdminContainer}/>
         <Route path="/admin-language" component={AdminContainer}/>
         <Route path="/admin-category" component={AdminContainer}/>
         <Route path="/admin-status" component={AdminContainer}/>
         <Route path="/admin-service" component={AdminContainer}/>
         <Route path="/admin-menu" component={AdminContainer}/>
         <Route path="/admin-system" component={AdminContainer}/>
+        <Route path="/admin-other" component={AdminContainer}/>
+        <Route path="/admin-usermgmt" component={AdminContainer}/>
       </Switch>
 
       );
