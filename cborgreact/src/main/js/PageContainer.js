@@ -9,20 +9,20 @@ import MemberContainer from "./member/member-container";
 import PublicContainer from "./public/public-container";
 import AdminContainer from "./admin/admin-container";
 import { bindActionCreators } from "redux";
-import * as navActions from "./core/navigation/nav-actions";
+//import * as navActions from "./core/navigation/nav-actions";
 import fuLogger from './core/common/fu-logger';
 
 class PageContainer extends Component {
   constructor(props) {
     super(props);
-    this.navigationChange = this.navigationChange.bind(this);
+    //this.navigationChange = this.navigationChange.bind(this);
   }
 
-  navigationChange(event) {
-    if (event.target.id == "LOGIN") {
-      this.props.actions.navChange({ currentPage: "login" });
-    }
-  }
+//  navigationChange(event) {
+//    if (event.target.id == "LOGIN") {
+//      this.props.actions.navChange({ currentPage: "login" });
+//    }
+//  }
 
   render() {
     fuLogger.log({level:'TRACE',loc:'PageContainer::render',msg:"page"});
@@ -77,7 +77,6 @@ class PageContainer extends Component {
 
 PageContainer.propTypes = {
   appPrefs: PropTypes.object.isRequired,
-  navigation: PropTypes.object.isRequired,
   appMenus: PropTypes.object,
   lang: PropTypes.string,
   actions: PropTypes.object,
@@ -95,8 +94,8 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(navActions, dispatch) };
-}
+//function mapDispatchToProps(dispatch) {
+//  return { actions: bindActionCreators(navActions, dispatch) };
+//}
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PageContainer));
+export default withRouter(connect(mapStateToProps)(PageContainer));
