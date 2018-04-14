@@ -8,6 +8,7 @@ import StatusView from "./coreView/status/status-view";
 import MemberContainer from "./member/member-container";
 import PublicContainer from "./public/public-container";
 import AdminContainer from "./admin/admin-container";
+import AccessDeniedContainer from "./core/usermanagement/accessdenied-container";
 import { bindActionCreators } from "redux";
 //import * as navActions from "./core/navigation/nav-actions";
 import fuLogger from './core/common/fu-logger';
@@ -25,12 +26,13 @@ class PageContainer extends Component {
 //  }
 
   render() {
-    fuLogger.log({level:'TRACE',loc:'PageContainer::render',msg:"page"});
+    fuLogger.log({level:'TRACE',loc:'PageContainer::render',msg:"page "+ this.props.history.location.pathname});
     if (this.props.session.sessionActive == true) {
      return (
       <Switch>
         <Route exact path="/" component={MemberContainer}/>
         <Route path="/member" component={MemberContainer}/>
+        <Route path="/access-denied" component={AccessDeniedContainer} />
         <Route path="/member-acquaintances" component={MemberContainer}/>
         <Route path="/member-groups" component={MemberContainer}/>
         <Route path="/member-notes" component={MemberContainer}/>
