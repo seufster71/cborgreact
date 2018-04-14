@@ -30,7 +30,7 @@ class PageContainer extends Component {
      return (
       <Switch>
         <Route exact path="/" component={MemberContainer}/>
-        <Route exact path="/member" component={MemberContainer}/>
+        <Route path="/member" component={MemberContainer}/>
         <Route path="/member-acquaintances" component={MemberContainer}/>
         <Route path="/member-groups" component={MemberContainer}/>
         <Route path="/member-notes" component={MemberContainer}/>
