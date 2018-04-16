@@ -2,28 +2,21 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Switch, Route, withRouter} from "react-router-dom";
-import NavigationContainer from "./coreView/navigation/navigation-view";
+import NavigationView from "./coreView/navigation/navigation-view";
 import LoginContainer from "./core/usermanagement/login-container";
 import StatusView from "./coreView/status/status-view";
 import MemberContainer from "./member/member-container";
 import PublicContainer from "./public/public-container";
+import ServiceContainer from "./public/service-container";
 import AdminContainer from "./admin/admin-container";
 import AccessDeniedContainer from "./core/usermanagement/accessdenied-container";
 import { bindActionCreators } from "redux";
-//import * as navActions from "./core/navigation/nav-actions";
 import fuLogger from './core/common/fu-logger';
 
 class PageContainer extends Component {
   constructor(props) {
     super(props);
-    //this.navigationChange = this.navigationChange.bind(this);
   }
-
-//  navigationChange(event) {
-//    if (event.target.id == "LOGIN") {
-//      this.props.actions.navChange({ currentPage: "login" });
-//    }
-//  }
 
   render() {
     fuLogger.log({level:'TRACE',loc:'PageContainer::render',msg:"page "+ this.props.history.location.pathname});
@@ -63,13 +56,14 @@ class PageContainer extends Component {
     } else {
       return (
         <div>
-          <NavigationContainer appPrefs={this.props.appPrefs}
+          <NavigationView appPrefs={this.props.appPrefs} activeTab={this.props.history.location.pathname}
           menus={this.props.appMenus.PUBLIC_MENU_RIGHT} />
           <StatusView />
           <Switch>
             <Route exact path="/" component={PublicContainer}/>
             <Route path="/login" component={LoginContainer}/>
             <Route path="/about" component={PublicContainer}/>
+            <Route path="/services" component={ServiceContainer}/>
           </Switch>
         </div>
       );
@@ -95,9 +89,5 @@ function mapStateToProps(state, ownProps) {
     session:state.session
   };
 }
-
-//function mapDispatchToProps(dispatch) {
-//  return { actions: bindActionCreators(navActions, dispatch) };
-//}
 
 export default withRouter(connect(mapStateToProps)(PageContainer));

@@ -202,7 +202,7 @@ a:active, a:focus, a:hover {
 	background-color: #6f98d6
 }
 .navbar-default {
-	background-color: #222 !important;
+	/* background-color: #222 !important;*/
 	border-color: transparent !important;
 }
 .navbar {

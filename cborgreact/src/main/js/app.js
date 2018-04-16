@@ -20,6 +20,9 @@ store.dispatch(sessionCheck());
 
 window.onbeforeunload = () => {
   localStorage.setItem("lang", store.getState().appPrefs.lang);
+  //if (store.getState().member.user != null) {
+  //  localStorage.setItem("user", JSON.stringify(store.getState().member.user));
+  //}
 };
 
 //class App extends Component {

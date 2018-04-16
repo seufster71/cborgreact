@@ -22,3 +22,4 @@ export default function configureStore() {
     composeWithDevTools(applyMiddleware(thunk, reduxImmutableStateInvariant()))
   );
 }
+// user:localStorage.getItem("user")
