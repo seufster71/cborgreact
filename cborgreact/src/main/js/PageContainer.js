@@ -70,9 +70,6 @@ class PageContainer extends Component {
     }
   }
 }
-// <NavigationView appPrefs={this.props.appPrefs} activeTab={this.props.history.location.pathname}
-//menus={this.props.appMenus.PUBLIC_MENU_RIGHT} />
-// <StatusView />
 
 PageContainer.propTypes = {
   appPrefs: PropTypes.object.isRequired,
