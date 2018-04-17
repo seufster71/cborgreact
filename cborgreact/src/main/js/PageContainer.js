@@ -56,9 +56,9 @@ class PageContainer extends Component {
     } else {
       return (
         <div>
-          <NavigationView appPrefs={this.props.appPrefs} activeTab={this.props.history.location.pathname}
+        <NavigationView appPrefs={this.props.appPrefs} activeTab={this.props.history.location.pathname}
           menus={this.props.appMenus.PUBLIC_MENU_RIGHT} />
-          <StatusView />
+         <StatusView />
           <Switch>
             <Route exact path="/" component={PublicContainer}/>
             <Route path="/login" component={LoginContainer}/>
@@ -70,6 +70,9 @@ class PageContainer extends Component {
     }
   }
 }
+// <NavigationView appPrefs={this.props.appPrefs} activeTab={this.props.history.location.pathname}
+//menus={this.props.appMenus.PUBLIC_MENU_RIGHT} />
+// <StatusView />
 
 PageContainer.propTypes = {
   appPrefs: PropTypes.object.isRequired,
