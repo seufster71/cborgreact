@@ -6,7 +6,10 @@ import session from '../member/session/session-reducer';
 import status from '../core/status/status-reducer';
 import users from '../admin/users/users-reducer';
 import languages from '../admin/language/language-reducer';
+import roles from '../admin/roles/roles-reducer';
+import permissions from '../admin/permissions/permissions-reducer';
+import menus from '../admin/menu/menus-reducer';
 
-const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,users,languages});
+const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,users,languages,roles,permissions,menus});
 
 export default rootReducer;
