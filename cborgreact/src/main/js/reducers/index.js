@@ -9,7 +9,9 @@ import languages from '../admin/language/language-reducer';
 import roles from '../admin/roles/roles-reducer';
 import permissions from '../admin/permissions/permissions-reducer';
 import menus from '../admin/menu/menus-reducer';
+import category from '../admin/category/category-reducer';
 
-const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,users,languages,roles,permissions,menus});
+const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,
+  users,languages,roles,permissions,menus,category});
 
 export default rootReducer;
