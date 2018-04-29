@@ -16,3 +16,6 @@
 [submodule "cborgreact/src/main/js/adminView"]
 	path = cborgreact/src/main/js/adminView
 	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-admin-reactweb.git
+[submodule "cborgreact/src/main/js/systemView"]
+	path = cborgreact/src/main/js/systemView
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-system-reactweb.git
