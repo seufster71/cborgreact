@@ -9,6 +9,7 @@ import MemberContainer from "./member/member-container";
 import PublicContainer from "./public/public-container";
 import ServiceContainer from "./public/service-container";
 import AdminContainer from "./admin/admin-container";
+import SystemContainer from "./system/system-container";
 import AccessDeniedContainer from "./core/usermanagement/accessdenied-container";
 import { bindActionCreators } from "redux";
 import fuLogger from './core/common/fu-logger';
@@ -50,6 +51,10 @@ class PageContainer extends Component {
         <Route path="/admin-system" component={AdminContainer}/>
         <Route path="/admin-other" component={AdminContainer}/>
         <Route path="/admin-usermgmt" component={AdminContainer}/>
+        <Route path="/system" component={SystemContainer}/>
+        <Route path="/system-clientdomain" component={SystemContainer}/>
+        <Route path="/system-services" component={SystemContainer}/>
+        <Route path="/system-application" component={SystemContainer}/>
       </Switch>
 
       );
