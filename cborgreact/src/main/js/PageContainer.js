@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Switch, Route, withRouter} from "react-router-dom";
 import NavigationView from "./coreView/navigation/navigation-view";
-import LoginContainer from "./core/usermanagement/login-container";
+import LoginContainer from "./core/usermgnt/login-container";
 import StatusView from "./coreView/status/status-view";
 import MemberContainer from "./member/member-container";
 import PublicContainer from "./public/public-container";
 import ServiceContainer from "./public/service-container";
 import AdminContainer from "./admin/admin-container";
 import SystemContainer from "./system/system-container";
-import AccessDeniedContainer from "./core/usermanagement/accessdenied-container";
+import AccessDeniedContainer from "./core/usermgnt/accessdenied-container";
 import { bindActionCreators } from "redux";
 import fuLogger from './core/common/fu-logger';
 

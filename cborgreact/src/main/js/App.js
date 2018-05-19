@@ -25,16 +25,6 @@ window.onbeforeunload = () => {
   //}
 };
 
-//class App extends Component {
-//   constructor() {
-//     super();
-//   }
-
-//   render() {
-//     return <PageContainer />;
-//   }
-//}
-
 render(
   <Provider store={store}>
     <BrowserRouter>
