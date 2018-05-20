@@ -43,3 +43,30 @@
 [submodule "cborgreact/src/main/js/member/submenu"]
 	path = cborgreact/src/main/js/member/submenu
 	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-submenu-react.git
+[submodule "cborgreact/src/main/js/memberView/acquaintances"]
+	path = cborgreact/src/main/js/memberView/acquaintances
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-acquaintances-reactweb.git
+[submodule "cborgreact/src/main/js/memberView/dashboard"]
+	path = cborgreact/src/main/js/memberView/dashboard
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-dashboard-reactweb.git
+[submodule "cborgreact/src/main/js/memberView/events"]
+	path = cborgreact/src/main/js/memberView/events
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-events-reactweb.git
+[submodule "cborgreact/src/main/js/memberView/groups"]
+	path = cborgreact/src/main/js/memberView/groups
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-groups-reactweb.git
+[submodule "cborgreact/src/main/js/memberView/logout"]
+	path = cborgreact/src/main/js/memberView/logout
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-logout-reactweb.git
+[submodule "cborgreact/src/main/js/memberView/notes"]
+	path = cborgreact/src/main/js/memberView/notes
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-notes-reactweb.git
+[submodule "cborgreact/src/main/js/memberView/profile"]
+	path = cborgreact/src/main/js/memberView/profile
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-profile-reactweb.git
+[submodule "cborgreact/src/main/js/memberView/shopping"]
+	path = cborgreact/src/main/js/memberView/shopping
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-shopping-reactweb.git
+[submodule "cborgreact/src/main/js/memberView/submenu"]
+	path = cborgreact/src/main/js/memberView/submenu
+	url = ssh://cborghome.ddns.net/opt/gitcborg/toasthub-member-submenu-reactweb.git
