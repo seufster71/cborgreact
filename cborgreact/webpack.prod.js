@@ -10,6 +10,7 @@ const BUILD_DIR = path.resolve(__dirname, 'src/main/resources/static/dist');
 
 module.exports = merge(common, {
   devtool: 'source-map',
+  mode: 'production',
   plugins: [
     new UglifyJSPlugin({ sourceMap: true }),
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') }),

@@ -5,6 +5,7 @@ const BUILD_DIR = path.resolve(__dirname, 'src/main/resources/static/build');
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',
+  mode: 'development',
   devServer: {
     inline: true,
     historyApiFallback: true,
