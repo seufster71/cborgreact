@@ -12,12 +12,12 @@ module.exports = {
   ],
   module : {
     rules : [
-      {
-        test : /\.jsx?/,
-        include: APP_DIR,
-        exclude: /node_modules/,
-        use: { loader: 'eslint-loader' }
-      },
+//      {
+//        test : /\.jsx?/,
+//        include: APP_DIR,
+//        exclude: /node_modules/,
+//        use: { loader: 'eslint-loader' }
+//      },
       {
         test : /\.jsx?/,
         include : APP_DIR,
