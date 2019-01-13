@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const APP_DIR = path.resolve(__dirname, 'src/main/js');
 
 module.exports = {
-  entry: { app: APP_DIR + '/App.js' },
+  entry: { app: APP_DIR + '/app.js' },
   plugins: [
     new webpack.LoaderOptionsPlugin({
       options: {}
