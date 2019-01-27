@@ -121,7 +121,7 @@ commitAll() {
 	
 	ECHO "#### main"
 	cd ~/gitsts/cborgreact/cborgreact
-	checkAndCommit "$*"
+	checkAndCommit "${1}"
 	
 	ECHO "#### Done committing"
 }
