@@ -133,7 +133,7 @@ all() {
 
 	
 if [ $# -eq 0 ]; then
-	echo "No arguments supplied"
+	echo "You must supply a comment"
 else 
 	str="$*"
 	echo Your comment is $str
