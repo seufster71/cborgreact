@@ -12,6 +12,7 @@ checkAndCommit() {
 		git commit -m "${1}"
 		echo "#### Pushing to repo"
 		git push
+		git log -1
 		echo "#### Complete"
 	fi
 }
@@ -124,7 +125,6 @@ commitAll() {
 	checkAndCommit "${1}"
 	
 	ECHO "#### Done committing"
-	git log -1
 }
 
 all() {
