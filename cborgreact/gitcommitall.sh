@@ -130,11 +130,12 @@ all() {
 	commitAll "{$1}"
 }
 
+
+	
 if [ $# -eq 0 ]; then
 	echo "No arguments supplied"
-elif [ $# -gt 1]
-then
-	echo "There are to many arguments you may need to use quotes"
 else 
-	all $1
+	array="${@}"
+	echo Your comment is $array
+	all $array
 fi	
