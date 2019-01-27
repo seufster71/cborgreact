@@ -124,6 +124,7 @@ commitAll() {
 	checkAndCommit "${1}"
 	
 	ECHO "#### Done committing"
+	git log -1
 }
 
 all() {
