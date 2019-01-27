@@ -121,13 +121,13 @@ commitAll() {
 	
 	ECHO "#### main"
 	cd ~/gitsts/cborgreact/cborgreact
-	checkAndCommit "${1}"
+	checkAndCommit "$*"
 	
 	ECHO "#### Done committing"
 }
 
 all() {
-	commitAll "{$1}"
+	commitAll "$*"
 }
 
 
@@ -135,7 +135,7 @@ all() {
 if [ $# -eq 0 ]; then
 	echo "No arguments supplied"
 else 
-	str="'$*'"
+	str="$*"
 	echo Your comment is $str
 	all $str
 fi	
