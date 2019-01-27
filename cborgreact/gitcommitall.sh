@@ -6,9 +6,13 @@ checkAndCommit() {
 	else
 		echo "Changes found"
 		echo $OUTPUT
+		echo "Add any new files"
 		git add .
+		echo "Commit files"
 		git commit -m "${1}"
+		echo "Push to repo"
 		git push
+		echo "Complete"
 	fi
 }
 
