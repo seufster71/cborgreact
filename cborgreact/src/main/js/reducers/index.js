@@ -17,9 +17,10 @@ import clientDomains from '../system/clientdomain/clientdomain-reducer';
 import applications from '../system/application/application-reducer';
 import bugs from '../admin/bugs/bugs-reducer';
 import acquaintances from '../member/acquaintances/acquaintances-reducer';
+import dashboard from '../admin/dashboard/dashboard-reducer';
 
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,
   users,languages,roles,permissions,menus,preferences,category,services,clientDomains,applications,bugs,
-acquaintances,userPrefs});
+acquaintances,dashboard,userPrefs});
 
 export default rootReducer;
