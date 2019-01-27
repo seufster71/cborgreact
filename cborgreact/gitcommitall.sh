@@ -135,7 +135,7 @@ all() {
 if [ $# -eq 0 ]; then
 	echo "No arguments supplied"
 else 
-	array="${@}"
-	echo Your comment is $array
-	all $array
+	str="'$*'"
+	echo Your comment is $str
+	all $str
 fi	
