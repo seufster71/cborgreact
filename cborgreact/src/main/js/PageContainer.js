@@ -15,12 +15,20 @@ import { bindActionCreators } from "redux";
 import fuLogger from './core/common/fu-logger';
 
 class PageContainer extends Component {
-  constructor(props) {
+	constructor(props) {
     super(props);
-  }
+}
 
+	componentDidUpdate() {
+		fuLogger.log({level:'TRACE',loc:'PageContainer::did update',msg:"page "});
+		if (this.props.session.sessionActive == true && this.props.session.status === 'JUST_LOGGEDIN') {
+			this.props.dispatch({ type: "CLEAR_SESSION_LOGIN" });
+			this.props.history.replace("/member");
+		}
+	}
+  
   render() {
-    fuLogger.log({level:'TRACE',loc:'PageContainer::render',msg:"page "+ this.props.history.location.pathname + " state " + JSON.stringify(this.state)});
+    fuLogger.log({level:'TRACE',loc:'PageContainer::render',msg:"page "+ this.props.history.location.pathname });
     if (this.props.session.sessionActive == true) {
      return (
       <Switch>

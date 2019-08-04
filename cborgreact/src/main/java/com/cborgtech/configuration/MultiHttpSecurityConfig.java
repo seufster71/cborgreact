@@ -13,7 +13,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.toasthub.core.general.filter.TenantInterceptor;
-import org.toasthub.security.filter.ToasthubLoginFilter;
 import org.toasthub.security.userManager.UserManagerSvc;
 
 import com.cborgtech.controller.RestAuthenticationEntryPoint;
@@ -25,16 +24,16 @@ public class MultiHttpSecurityConfig {
 	
 	@Autowired
 	UserManagerSvc userManagerSvc;
-	
+		
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-	    return new BCryptPasswordEncoder();
+	    return new BCryptPasswordEncoder(4);
 	}
 	
 	@Configuration
 	@Order(1)                                                        
 	public class ApiWebSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
-		
+
 		@Autowired
 		private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
 		
@@ -42,12 +41,13 @@ public class MultiHttpSecurityConfig {
 			http.csrf().disable()
 				.addFilterBefore(tenantInterceptor(), BasicAuthenticationFilter.class)
 				.antMatcher("/api/**")
-				.addFilterAfter(toasthubLoginFilter(), BasicAuthenticationFilter.class)
+			//	.addFilterAfter(toasthubLoginFilter(), BasicAuthenticationFilter.class)
 				.exceptionHandling()
-					.authenticationEntryPoint(restAuthenticationEntryPoint)
+				.authenticationEntryPoint(restAuthenticationEntryPoint)
+				.and().httpBasic()
 				.and()
 				.authorizeRequests()
-					.antMatchers("/api/public/**","/api/login/**").permitAll()
+					.antMatchers("/api/public/**").permitAll()
 					.anyRequest().authenticated();
 		}
 	}
@@ -62,19 +62,11 @@ public class MultiHttpSecurityConfig {
 		protected void configure(HttpSecurity http) throws Exception {
 			http.csrf().disable()
             .authorizeRequests()
-				.antMatchers("/", "/login/**", "/1.0/**", "/css/**", "/img/**", "/libs/**", "/js/**", "/public/**", "/dist/**").permitAll()
+				.antMatchers("/", "/login/**", "/css/**", "/img/**", "/libs/**", "/js/**", "/public/**", "/dist/**").permitAll()
 				.antMatchers("/test/**").hasAuthority("PRIVATE")
 				.anyRequest().authenticated()
             .and()
-            .formLogin()
-				.loginPage("/login/login.html")
-				.permitAll()
-				.and()
-            .logout()
-            	.logoutUrl("/logout.html")
-            	.invalidateHttpSession(true)
-				.and()
-			.exceptionHandling()
+   			.exceptionHandling()
 				.accessDeniedHandler(accessDeniedHandler);
 		}
 	}
@@ -83,7 +75,7 @@ public class MultiHttpSecurityConfig {
 		return new TenantInterceptor();
 	}
 	
-	private ToasthubLoginFilter toasthubLoginFilter() {
-		return new ToasthubLoginFilter(userManagerSvc);
-	}
+	//private ToasthubLoginFilter toasthubLoginFilter() {
+	//	return new ToasthubLoginFilter(userManagerSvc);
+	//}
 }
