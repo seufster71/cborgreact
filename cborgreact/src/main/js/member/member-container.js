@@ -49,8 +49,8 @@ class MemberContainer extends Component {
       myMenus = this.props.appMenus[this.props.appPrefs.memberMenu];
     }
     let myPermissions = {};
-    if (this.props.member != null && this.props.member.user != null && this.props.member.user.permissions != null) {
-      myPermissions = this.props.member.user.permissions;
+    if (this.props.session != null && this.props.session.user != null && this.props.session.user.permissions != null) {
+      myPermissions = this.props.session.user.permissions;
     }
     if (myMenus.length > 0) {
       return (

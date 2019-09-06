@@ -136,8 +136,8 @@ a:active, a:focus, a:hover {
 
 .navbar-custom .navbar-brand {
 	filter: drop-shadow(5px 5px 3px rgba(0,0,0,1.5));
-	color: #248003;
-/* 	color: #fed136; */
+	color: #3475d4 !important;
+
 	font-family: 'Wallpoet',
 	/* font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, */
 		cursive
@@ -146,13 +146,12 @@ a:active, a:focus, a:hover {
 .navbar-custom .navbar-brand.active, .navbar-custom .navbar-brand:active,
 	.navbar-custom .navbar-brand:focus, .navbar-custom .navbar-brand:hover
 	{
-	color: #fff;
-/* 	color: #6f98d6 */
+	color: #3475d4;
 }
 
-.navbar-custom .nav li a, .navbar-custom .navbar-toggle {
+.navbar-default .navbar-nav li a, .navbar-custom .navbar-toggle {
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #fff;
+	color: #fff !important;
 	text-transform: uppercase
 }
 
@@ -185,8 +184,8 @@ a:active, a:focus, a:hover {
 }
 
 .navbar-default .navbar-nav>.active>a {
-	color: #fff;
-	background-color: #f8f8f8 !important;
+	color: #3475d4 !important;
+	background-color: #111111 !important;
 }
 
 .navbar-custom .navbar-nav>.active>a:focus, .navbar-custom .navbar-nav>.active>a:hover {
@@ -195,7 +194,9 @@ a:active, a:focus, a:hover {
 }
 
 .navbar-default {
-	border-color: transparent !important;
+	border-color: #3475d4 !important;
+	border-bottom-width: thick !important;
+	background-color: #111111 !important;
 }
 .navbar {
 	margin: 0 !important;
@@ -207,9 +208,6 @@ a:active, a:focus, a:hover {
 	}
 }
 @media ( max-width :767px) {
-	.navbar-default {
-		background-color: #fff !important;
-	}
 	.navbar-custom .navText {
 		display: none;
 	}
@@ -232,7 +230,6 @@ a:active, a:focus, a:hover {
 	}
 	.navbar-default .navbar-nav>.active>a {
 		color: #fff;
-		background-color: #fff !important;
 	}
 }
 @media ( min-width :768px) {
