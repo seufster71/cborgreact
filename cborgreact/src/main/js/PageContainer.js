@@ -61,7 +61,6 @@ class PageContainer extends Component {
         <Route path="/admin-usermgmt" component={AdminContainer}/>
         <Route path="/system" component={SystemContainer}/>
         <Route path="/system-clientdomain" component={SystemContainer}/>
-        <Route path="/system-services" component={SystemContainer}/>
         <Route path="/system-application" component={SystemContainer}/>
       </Switch>
 
