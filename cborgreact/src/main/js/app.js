@@ -5,10 +5,11 @@ import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { initPublic } from "./core/common/apppref-actions";
-import { sessionCheck } from "./member/session/session-actions";
+import { sessionCheck, viewPortChange } from "./member/session/session-actions";
 import PageContainer from "./PageContainer.js";
 import Bootstrap from "bootstrap/dist/css/bootstrap.css";
 import Theme from "./theme.css";
+import utils from './core/common/utils';
 
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
@@ -17,6 +18,7 @@ if (process.env.NODE_ENV !== "production") {
 const store = configureStore();
 store.dispatch(initPublic());
 store.dispatch(sessionCheck());
+store.dispatch(viewPortChange(window.innerWidth, window.innerHeight));
 
 window.onbeforeunload = () => {
   localStorage.setItem("lang", store.getState().appPrefs.lang);
@@ -24,6 +26,13 @@ window.onbeforeunload = () => {
   //  localStorage.setItem("user", JSON.stringify(store.getState().member.user));
   //}
 };
+
+const handleResize = () => {
+	console.log("resized to", window.innerWidth, window.innerHeight );
+	store.dispatch(viewPortChange(window.innerWidth, window.innerHeight));
+}
+
+window.addEventListener('resize', utils.debounce(handleResize,1000));
 
 render(
   <Provider store={store}>

@@ -14,7 +14,7 @@ export default function configureStore() {
       adminMenu:'ADMIN_MENU_TOP',
       systemMenu:'SYSTEM_MENU_TOP'
     },
-    session: { sessionActive: false },
+    session: { sessionActive: false , viewPort: 'large' },
     status: { error: null, info: null, warn: null }
   };
   return createStore(
