@@ -244,3 +244,19 @@ ul.list-group.list-group-hover li:hover{
   border: solid #ccc;
   border-width: 1px 1px 0 1px;
 }
+
+.fa-1 {
+	font-size: 1em;
+	margin-right: 3px;
+	color: Dodgerblue;
+}
+.fa-2 {
+	font-size: 2em;
+	margin-right: 3px;
+	color: Dodgerblue;
+}
+.fa-3 {
+	font-size: 4em;
+	margin-right: 3px;
+	color: Dodgerblue;
+}

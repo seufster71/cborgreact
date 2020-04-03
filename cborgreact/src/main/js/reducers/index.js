@@ -12,6 +12,7 @@ import roles from '../admin/roles/roles-reducer';
 import permissions from '../admin/permissions/permissions-reducer';
 import menus from '../admin/menu/menus-reducer';
 import preferences from '../admin/preferences/preferences-reducer';
+import preferenceSubView from '../admin/preferences/preference-subview-reducer';
 import category from '../admin/category/category-reducer';
 import services from '../admin/service/service-reducer';
 import clientDomains from '../system/clientdomain/clientdomain-reducer';
@@ -21,7 +22,7 @@ import acquaintances from '../member/acquaintances/acquaintances-reducer';
 import dashboard from '../admin/dashboard/dashboard-reducer';
 
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,statuses,
-  users,languages,roles,permissions,menus,preferences,category,services,clientDomains,applications,bugs,
+  users,languages,roles,permissions,menus,preferences,preferenceSubView,category,services,clientDomains,applications,bugs,
 acquaintances,dashboard,userPrefs});
 
 export default rootReducer;
