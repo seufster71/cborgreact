@@ -11,8 +11,8 @@ export function initMember() {
 		let requestParams = {};
 		requestParams.action = "INIT";
 		requestParams.service = "MEMBER_SVC";
-		//requestParams.prefForms = new Array("LOGIN_FORM","REGISTRATION_FORM","FORGOTPASSWORD_FORM","PASSWORD_CHANGE_FORM");
-		requestParams.prefTexts = new Array("MEMBER_PAGE");
+		//requestParams.prefFormKeys = new Array("LOGIN_FORM","REGISTRATION_FORM","FORGOTPASSWORD_FORM","PASSWORD_CHANGE_FORM");
+		requestParams.prefTextKeys = new Array("MEMBER_PAGE");
 		requestParams.menuNames = new Array("MEMBER_MENU_TOP");
 		let params = {};
 		params.requestParams = requestParams;
