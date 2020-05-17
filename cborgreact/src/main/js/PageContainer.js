@@ -43,6 +43,8 @@ class PageContainer extends Component {
         <Route path="/member-logout" component={MemberContainer}/>
         <Route path="/admin" component={AdminContainer}/>
         <Route path="/admin-bugs" component={AdminContainer}/>
+        <Route path="/admin-buglanes" component={AdminContainer}/>
+        <Route path="/admin-buglist" component={AdminContainer}/>
         <Route path="/admin-changerequests" component={AdminContainer}/>
         <Route path="/admin-users" component={AdminContainer}/>
         <Route path="/admin-roles" component={AdminContainer}/>
