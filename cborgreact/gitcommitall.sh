@@ -74,6 +74,10 @@ commitAll() {
 	cd ~/git/cborgreact/cborgreact/src/main/js/member/submenu
 	checkAndCommit "${1}"
 	
+	ECHO "#### member pm product"
+	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_product
+	checkAndCommit "${1}"
+	
 	ECHO "#### memberView acquaintances"
 	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/acquaintances
 	checkAndCommit "${1}"
@@ -108,6 +112,10 @@ commitAll() {
 	
 	ECHO "#### memberView submenu"
 	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/submenu
+	checkAndCommit "${1}"
+	
+	ECHO "#### memberView pm product"
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_product
 	checkAndCommit "${1}"
 	
 	

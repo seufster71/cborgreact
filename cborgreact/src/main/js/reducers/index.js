@@ -20,9 +20,10 @@ import applications from '../system/application/application-reducer';
 import bugs from '../admin/bugs/bugs-reducer';
 import acquaintances from '../member/acquaintances/acquaintances-reducer';
 import dashboard from '../admin/dashboard/dashboard-reducer';
+import pmproduct from '../member/pm_product/product-reducer';
 
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,statuses,
   users,languages,roles,permissions,menus,preferences,preferenceSubView,category,services,clientDomains,applications,bugs,
-acquaintances,dashboard,userPrefs});
+acquaintances,dashboard,userPrefs,pmproduct});
 
 export default rootReducer;

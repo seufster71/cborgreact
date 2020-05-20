@@ -36,6 +36,12 @@ class PageContainer extends Component {
         <Route path="/member" component={MemberContainer}/>
         <Route path="/access-denied" component={AccessDeniedContainer} />
         <Route path="/member-acquaintances" component={MemberContainer}/>
+        <Route path="/pm-product" component={MemberContainer}/>
+        <Route path="/pm-project" component={MemberContainer}/>
+        <Route path="/pm-release" component={MemberContainer}/>
+        <Route path="/pm-backlog" component={MemberContainer}/>
+        <Route path="/pm-defect" component={MemberContainer}/>
+        <Route path="/pm-enhancement" component={MemberContainer}/>
         <Route path="/member-groups" component={MemberContainer}/>
         <Route path="/member-notes" component={MemberContainer}/>
         <Route path="/member-shopping" component={MemberContainer}/>

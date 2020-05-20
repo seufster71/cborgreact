@@ -54,6 +54,10 @@ ECHO member submenu
 cd ~/git/cborgreact/cborgreact/src/main/js/member/submenu
 git pull origin master
 
+ECHO member pm product
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_product
+git pull origin master
+
 
 ECHO memberView acquaintances
 cd ~/git/cborgreact/cborgreact/src/main/js/memberView/acquaintances
@@ -89,6 +93,10 @@ git pull origin master
 
 ECHO memberView submenu
 cd ~/git/cborgreact/cborgreact/src/main/js/memberView/submenu
+git pull origin master
+
+ECHO memberView pm product
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_product
 git pull origin master
 
 
