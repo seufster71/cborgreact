@@ -79,3 +79,6 @@
 [submodule "cborgreact/src/main/js/member/pm_product"]
 	path = cborgreact/src/main/js/member/pm_product
 	url = https://github.com/seufster71/toasthub-react-pm-product.git
+[submodule "cborgreact/src/main/js/memberView/pm_project"]
+	path = cborgreact/src/main/js/memberView/pm_project
+	url = https://github.com/seufster71/toasthub-reactweb-pm-project.git
