@@ -97,3 +97,15 @@
 [submodule "cborgreact/src/main/js/memberView/pm_backlog"]
 	path = cborgreact/src/main/js/memberView/pm_backlog
 	url = https://github.com/seufster71/toasthub-reactweb-pm-backlog.git
+[submodule "cborgreact/src/main/js/member/pm_defect"]
+	path = cborgreact/src/main/js/member/pm_defect
+	url = https://github.com/seufster71/toasthub-react-pm-defect.git
+[submodule "cborgreact/src/main/js/member/pm_enhancement"]
+	path = cborgreact/src/main/js/member/pm_enhancement
+	url = https://github.com/seufster71/toasthub-react-pm-enhancement.git
+[submodule "cborgreact/src/main/js/memberView/pm_defect"]
+	path = cborgreact/src/main/js/memberView/pm_defect
+	url = https://github.com/seufster71/toasthub-reactweb-pm-defect.git
+[submodule "cborgreact/src/main/js/memberView/pm_enhancement"]
+	path = cborgreact/src/main/js/memberView/pm_enhancement
+	url = https://github.com/seufster71/toasthub-reactweb-pm-enhancement.git
