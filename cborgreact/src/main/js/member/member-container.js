@@ -15,6 +15,7 @@ import NavigationView from '../coreView/navigation/navigation-view';
 import EventsContainer from './events/events-container';
 import AcquaintancesContainer from './acquaintances/acquaintances-container';
 import PMProductContainer from './pm_product/product-container';
+import PMProjectContainer from './pm_project/project-container';
 import NotesContainer from './notes/notes-container';
 import GroupsContainer from './groups/groups-container';
 import SubMenuContainer from './submenu/submenu-container';
@@ -63,7 +64,8 @@ class MemberContainer extends Component {
             <Route exact path="/" component={DashboardContainer} />
             <Route exact path="/member" component={DashboardContainer} />
             <PrivateRoute path="/member-acquaintances" component={AcquaintancesContainer} permissions={myPermissions} code="MA" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-product" component={PMProductContainer} permissions={myPermissions} code="MPM" pathto="/access-denied"/>
+            <PrivateRoute path="/pm-product" component={PMProductContainer} permissions={myPermissions} code="MPMPROD" pathto="/access-denied"/>
+            <PrivateRoute path="/pm-project" component={PMProjectContainer} permissions={myPermissions} code="MPMPROJ" pathto="/access-denied"/>
             <PrivateRoute path="/member-groups" component={GroupsContainer} permissions={myPermissions} code="MG" pathto="/access-denied"/>
             <PrivateRoute path="/member-notes" component={NotesContainer} permissions={myPermissions} code="MN" pathto="/access-denied"/>
             <PrivateRoute path="/member-submenu" component={SubMenuContainer} permissions={myPermissions} code="MSM" pathto="/access-denied"/>

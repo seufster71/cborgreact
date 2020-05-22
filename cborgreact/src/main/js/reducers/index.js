@@ -21,9 +21,10 @@ import bugs from '../admin/bugs/bugs-reducer';
 import acquaintances from '../member/acquaintances/acquaintances-reducer';
 import dashboard from '../admin/dashboard/dashboard-reducer';
 import pmproduct from '../member/pm_product/product-reducer';
+import pmproject from '../member/pm_project/project-reducer';
 
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,statuses,
   users,languages,roles,permissions,menus,preferences,preferenceSubView,category,services,clientDomains,applications,bugs,
-acquaintances,dashboard,userPrefs,pmproduct});
+acquaintances,dashboard,userPrefs,pmproduct,pmproject});
 
 export default rootReducer;
