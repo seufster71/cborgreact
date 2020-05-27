@@ -90,6 +90,14 @@ commitAll() {
 	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_backlog
 	checkAndCommit "${1}"
 	
+	ECHO "#### member pm defect"
+	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_defect
+	checkAndCommit "${1}"
+	
+	ECHO "#### member pm enhancement"
+	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_enhancement
+	checkAndCommit "${1}"
+	
 	ECHO "#### memberView acquaintances"
 	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/acquaintances
 	checkAndCommit "${1}"
@@ -140,6 +148,14 @@ commitAll() {
 	
 	ECHO "#### memberView pm backlog"
 	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_backlog
+	checkAndCommit "${1}"
+	
+	ECHO "#### memberView pm defect"
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_defect
+	checkAndCommit "${1}"
+	
+	ECHO "#### memberView pm enhancement"
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_enhancement
 	checkAndCommit "${1}"
 	
 	ECHO "#### system"
