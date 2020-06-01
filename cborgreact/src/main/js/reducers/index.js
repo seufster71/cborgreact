@@ -26,9 +26,16 @@ import pmrelease from '../member/pm_release/release-reducer';
 import pmbacklog from '../member/pm_backlog/backlog-reducer';
 import pmdefect from '../member/pm_defect/defect-reducer';
 import pmenhancement from '../member/pm_enhancement/enhancement-reducer';
+import pmscrum from '../member/pm_scrum/scrum-reducer';
+import pmsprint from '../member/pm_sprint/sprint-reducer';
+import pmtask from '../member/pm_task/task-reducer';
+import pmtestcase from '../member/pm_testcase/testcase-reducer';
+import pmtestscenario from '../member/pm_testscenario/testscenario-reducer';
+import pmworkflow from '../member/pm_workflow/workflow-reducer';
 
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,statuses,
   users,languages,roles,permissions,menus,preferences,preferenceSubView,category,services,clientDomains,applications,bugs,
-acquaintances,dashboard,userPrefs,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement});
+acquaintances,dashboard,userPrefs,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement,pmscrum,pmsprint,pmtask,
+pmtestcase,pmtestscenario,pmworkflow});
 
 export default rootReducer;
