@@ -98,6 +98,30 @@ commitAll() {
 	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_enhancement
 	checkAndCommit "${1}"
 	
+	ECHO "#### member pm scrum"
+	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_scrum
+	checkAndCommit "${1}"
+	
+	ECHO "#### member pm sprint"
+	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_sprint
+	checkAndCommit "${1}"
+	
+	ECHO "#### member pm task"
+	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_task
+	checkAndCommit "${1}"
+	
+	ECHO "#### member pm testcase"
+	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_testcase
+	checkAndCommit "${1}"
+	
+	ECHO "#### member pm testscenario"
+	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_testscenario
+	checkAndCommit "${1}"
+	
+	ECHO "#### member pm workflow"
+	cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_workflow
+	checkAndCommit "${1}"
+	
 	ECHO "#### memberView acquaintances"
 	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/acquaintances
 	checkAndCommit "${1}"
@@ -156,6 +180,26 @@ commitAll() {
 	
 	ECHO "#### memberView pm enhancement"
 	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_enhancement
+	checkAndCommit "${1}"
+	
+	ECHO "#### memberView pm scrum"
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_scrum
+	checkAndCommit "${1}"
+	
+	ECHO "#### memberView pm sprint"
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_sprint
+	checkAndCommit "${1}"
+	
+	ECHO "#### memberView pm testcase"
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_testcase
+	checkAndCommit "${1}"
+	
+	ECHO "#### memberView pm testscenario"
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_scenario
+	checkAndCommit "${1}"
+	
+	ECHO "#### memberView pm workflow"
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_workflow
 	checkAndCommit "${1}"
 	
 	ECHO "#### system"
