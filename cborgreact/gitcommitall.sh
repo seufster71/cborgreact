@@ -190,6 +190,10 @@ commitAll() {
 	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_sprint
 	checkAndCommit "${1}"
 	
+	ECHO "#### memberView pm task"
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_task
+	checkAndCommit "${1}"
+	
 	ECHO "#### memberView pm testcase"
 	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_testcase
 	checkAndCommit "${1}"
