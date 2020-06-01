@@ -54,12 +54,52 @@ ECHO member submenu
 cd ~/git/cborgreact/cborgreact/src/main/js/member/submenu
 git pull origin master
 
+ECHO member pm backlog
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_backlog
+git pull origin master
+
+ECHO member pm defect
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_defect
+git pull origin master
+
+ECHO member pm enhancement
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_enhancement
+git pull origin master
+
 ECHO member pm product
 cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_product
 git pull origin master
 
 ECHO member pm project
 cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_project
+git pull origin master
+
+ECHO member pm release
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_release
+git pull origin master
+
+ECHO member pm scrum
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_scrum
+git pull origin master
+
+ECHO member pm sprint
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_sprint
+git pull origin master
+
+ECHO member pm task
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_task
+git pull origin master
+
+ECHO member pm testcase
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_testcase
+git pull origin master
+
+ECHO member pm testscenario
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_testscenario
+git pull origin master
+
+ECHO member pm workflow
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_workflow
 git pull origin master
 
 ECHO memberView acquaintances
@@ -98,6 +138,18 @@ ECHO memberView submenu
 cd ~/git/cborgreact/cborgreact/src/main/js/memberView/submenu
 git pull origin master
 
+ECHO memberView pm backlog
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_backlog
+git pull origin master
+
+ECHO memberView pm defect
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_defect
+git pull origin master
+
+ECHO memberView pm enhancement
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_enhancement
+git pull origin master
+
 ECHO memberView pm product
 cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_product
 git pull origin master
@@ -106,6 +158,33 @@ ECHO memberView pm project
 cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_project
 git pull origin master
 
+ECHO memberView pm release
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_release
+git pull origin master
+
+ECHO memberView pm scrum
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_scrum
+git pull origin master
+
+ECHO memberView pm sprint
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_sprint
+git pull origin master
+
+ECHO memberView pm task
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_task
+git pull origin master
+
+ECHO memberView pm testcase
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_testcase
+git pull origin master
+
+ECHO memberView pm testscenario
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_testscenario
+git pull origin master
+
+ECHO memberView pm workflow
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_workflow
+git pull origin master
 
 ECHO system
 cd ~/git/cborgreact/cborgreact/src/main/js/system

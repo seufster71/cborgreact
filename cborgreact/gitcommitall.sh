@@ -199,7 +199,7 @@ commitAll() {
 	checkAndCommit "${1}"
 	
 	ECHO "#### memberView pm testscenario"
-	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_scenario
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_testscenario
 	checkAndCommit "${1}"
 	
 	ECHO "#### memberView pm workflow"
