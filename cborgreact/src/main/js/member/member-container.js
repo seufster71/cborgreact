@@ -20,6 +20,8 @@ import PMReleaseContainer from './pm_release/release-container';
 import PMBacklogContainer from './pm_backlog/backlog-container';
 import PMDefectContainer from './pm_defect/defect-container';
 import PMEnhancementContainer from './pm_enhancement/enhancement-container';
+import PMTaskContainer from './pm_task/task-container';
+import PMWorkflowContainer from './pm_workflow/workflow-container';
 import NotesContainer from './notes/notes-container';
 import GroupsContainer from './groups/groups-container';
 import SubMenuContainer from './submenu/submenu-container';
@@ -74,6 +76,8 @@ class MemberContainer extends Component {
             <PrivateRoute path="/pm-backlog" component={PMBacklogContainer} permissions={myPermissions} code="MPMBAK" pathto="/access-denied"/>
             <PrivateRoute path="/pm-defect" component={PMDefectContainer} permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>
             <PrivateRoute path="/pm-enhancement" component={PMEnhancementContainer} permissions={myPermissions} code="MPMENH" pathto="/access-denied"/>
+            <PrivateRoute path="/pm-task" component={PMTaskContainer} permissions={myPermissions} code="MPMTASK" pathto="/access-denied"/>
+            <PrivateRoute path="/pm-workflow" component={PMWorkflowContainer} permissions={myPermissions} code="MPMWF" pathto="/access-denied"/>
             <PrivateRoute path="/member-groups" component={GroupsContainer} permissions={myPermissions} code="MG" pathto="/access-denied"/>
             <PrivateRoute path="/member-notes" component={NotesContainer} permissions={myPermissions} code="MN" pathto="/access-denied"/>
             <PrivateRoute path="/member-submenu" component={SubMenuContainer} permissions={myPermissions} code="MSM" pathto="/access-denied"/>
