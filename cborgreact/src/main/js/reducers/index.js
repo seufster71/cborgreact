@@ -32,10 +32,11 @@ import pmtask from '../member/pm_task/task-reducer';
 import pmtestcase from '../member/pm_testcase/testcase-reducer';
 import pmtestscenario from '../member/pm_testscenario/testscenario-reducer';
 import pmworkflow from '../member/pm_workflow/workflow-reducer';
+import pmworkflowstep from '../member/pm_workflow/workflowstep-reducer';
 
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,statuses,
   users,languages,roles,permissions,menus,preferences,preferenceSubView,category,services,clientDomains,applications,bugs,
 acquaintances,dashboard,userPrefs,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement,pmscrum,pmsprint,pmtask,
-pmtestcase,pmtestscenario,pmworkflow});
+pmtestcase,pmtestscenario,pmworkflow,pmworkflowstep});
 
 export default rootReducer;

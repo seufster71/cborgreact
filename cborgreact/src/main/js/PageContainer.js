@@ -44,6 +44,7 @@ class PageContainer extends Component {
         <Route path="/pm-enhancement" component={MemberContainer}/>
         <Route path="/pm-task" component={MemberContainer}/>
         <Route path="/pm-workflow" component={MemberContainer}/>
+        <Route path="/pm-workflowstep" component={MemberContainer}/>
         <Route path="/member-groups" component={MemberContainer}/>
         <Route path="/member-notes" component={MemberContainer}/>
         <Route path="/member-shopping" component={MemberContainer}/>
