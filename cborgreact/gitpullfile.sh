@@ -90,6 +90,10 @@ ECHO member pm task
 cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_task
 git pull origin master
 
+ECHO member pm team
+cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_team
+git pull origin master
+
 ECHO member pm testcase
 cd ~/git/cborgreact/cborgreact/src/main/js/member/pm_testcase
 git pull origin master
@@ -172,6 +176,10 @@ git pull origin master
 
 ECHO memberView pm task
 cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_task
+git pull origin master
+
+ECHO memberView pm team
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_team
 git pull origin master
 
 ECHO memberView pm testcase

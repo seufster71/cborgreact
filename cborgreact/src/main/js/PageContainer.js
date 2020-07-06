@@ -59,9 +59,6 @@ class PageContainer extends Component {
         <Route path="/admin-roles" component={AdminContainer}/>
         <Route path="/admin-permissions" component={AdminContainer}/>
         <Route path="/admin-prefmgmt" component={AdminContainer}/>
-        <Route path="/admin-prefpublic" component={AdminContainer}/>
-        <Route path="/admin-prefmember" component={AdminContainer}/>
-        <Route path="/admin-prefadmin" component={AdminContainer}/>
         <Route path="/admin-language" component={AdminContainer}/>
         <Route path="/admin-category" component={AdminContainer}/>
         <Route path="/admin-status" component={AdminContainer}/>
