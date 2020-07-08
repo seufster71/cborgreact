@@ -36,6 +36,7 @@ class PageContainer extends Component {
         <Route path="/member" component={MemberContainer}/>
         <Route path="/access-denied" component={AccessDeniedContainer} />
         <Route path="/member-acquaintances" component={MemberContainer}/>
+        <Route path="/pm-team" component={MemberContainer}/>
         <Route path="/pm-product" component={MemberContainer}/>
         <Route path="/pm-project" component={MemberContainer}/>
         <Route path="/pm-release" component={MemberContainer}/>

@@ -20,6 +20,7 @@ import applications from '../system/application/application-reducer';
 import bugs from '../admin/bugs/bugs-reducer';
 import acquaintances from '../member/acquaintances/acquaintances-reducer';
 import dashboard from '../admin/dashboard/dashboard-reducer';
+import pmteam from '../member/pm_team/team-reducer';
 import pmproduct from '../member/pm_product/product-reducer';
 import pmproject from '../member/pm_project/project-reducer';
 import pmrelease from '../member/pm_release/release-reducer';
@@ -36,7 +37,7 @@ import pmworkflowstep from '../member/pm_workflow/workflowstep-reducer';
 
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,statuses,
   users,languages,roles,permissions,menus,preferences,preferenceSubView,category,services,clientDomains,applications,bugs,
-acquaintances,dashboard,userPrefs,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement,pmscrum,pmsprint,pmtask,
+acquaintances,dashboard,userPrefs,pmteam,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement,pmscrum,pmsprint,pmtask,
 pmtestcase,pmtestscenario,pmworkflow,pmworkflowstep});
 
 export default rootReducer;

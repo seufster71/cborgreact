@@ -14,6 +14,7 @@ import LoadingView from '../coreView/status/loading-view';
 import NavigationView from '../coreView/navigation/navigation-view';
 import EventsContainer from './events/events-container';
 import AcquaintancesContainer from './acquaintances/acquaintances-container';
+import PMTeamContainer from './pm_team/team-container';
 import PMProductContainer from './pm_product/product-container';
 import PMProjectContainer from './pm_project/project-container';
 import PMReleaseContainer from './pm_release/release-container';
@@ -71,6 +72,7 @@ class MemberContainer extends Component {
             <Route exact path="/" component={DashboardContainer} />
             <Route exact path="/member" component={DashboardContainer} />
             <PrivateRoute path="/member-acquaintances" component={AcquaintancesContainer} permissions={myPermissions} code="MA" pathto="/access-denied"/>
+            <PrivateRoute path="/pm-team" component={PMTeamContainer} permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>
             <PrivateRoute path="/pm-product" component={PMProductContainer} permissions={myPermissions} code="MPMPROD" pathto="/access-denied"/>
             <PrivateRoute path="/pm-project" component={PMProjectContainer} permissions={myPermissions} code="MPMPROJ" pathto="/access-denied"/>
             <PrivateRoute path="/pm-release" component={PMReleaseContainer} permissions={myPermissions} code="MPMREL" pathto="/access-denied"/>
