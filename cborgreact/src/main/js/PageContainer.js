@@ -16,8 +16,8 @@ import fuLogger from './core/common/fu-logger';
 
 class PageContainer extends Component {
 	constructor(props) {
-    super(props);
-}
+		super(props);
+	}
 
 	componentDidUpdate() {
 		fuLogger.log({level:'TRACE',loc:'PageContainer::did update',msg:"page "});
