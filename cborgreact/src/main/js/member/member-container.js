@@ -61,6 +61,10 @@ class MemberContainer extends Component {
     if (this.props.appMenus != null && this.props.appMenus[this.props.appPrefs.memberMenu] != null) {
       myMenus = this.props.appMenus[this.props.appPrefs.memberMenu];
     }
+    let profileMenu = [];
+    if (this.props.appMenus != null && this.props.appMenus.MEMBER_PROFILE_MENU_TOP != null) {
+    	profileMenu = this.props.appMenus.MEMBER_PROFILE_MENU_TOP;
+    }
     let myPermissions = {};
     if (this.props.session != null && this.props.session.user != null && this.props.session.user.permissions != null) {
       myPermissions = this.props.session.user.permissions;
@@ -69,7 +73,7 @@ class MemberContainer extends Component {
       return (
         <MemberView>
           <NavigationView appPrefs={this.props.appPrefs} permissions={myPermissions}
-          menus={myMenus} changeTab={this.changeTab} activeTab={this.props.history.location.pathname}/>
+          menus={myMenus} changeTab={this.changeTab} activeTab={this.props.history.location.pathname} user={this.props.session.user} profileMenu={profileMenu}/>
           <StatusView/>
           <Switch>
             <Route exact path="/" component={DashboardContainer} />

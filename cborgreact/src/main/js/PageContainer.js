@@ -20,10 +20,17 @@ class PageContainer extends Component {
 	}
 
 	componentDidUpdate() {
-		fuLogger.log({level:'TRACE',loc:'PageContainer::did update',msg:"page "});
+		fuLogger.log({level:'TRACE',loc:'PageContainer::did update',msg:"page "+ this.props.history.location.pathname});
 		if (this.props.session.sessionActive == true && this.props.session.status === 'JUST_LOGGEDIN') {
 			this.props.dispatch({ type: "CLEAR_SESSION_LOGIN" });
 			this.props.history.replace("/member");
+		} else if (this.props.session.sessionActive == false) {
+			if (this.props.history.location.pathname === "/member-logout") {
+		    	this.props.history.replace("/login");
+		    } else if ( !(this.props.history.location.pathname === "/" || this.props.history.location.pathname === "/login" 
+	    		|| this.props.history.location.pathname === "/about" || this.props.history.location.pathname === "/services")) {
+	    		this.props.history.replace("/");
+	    	}
 		}
 	}
   
@@ -81,7 +88,7 @@ class PageContainer extends Component {
       return (
         <div>
         <NavigationView appPrefs={this.props.appPrefs} activeTab={this.props.history.location.pathname}
-          menus={this.props.appMenus.PUBLIC_MENU_RIGHT} />
+          menus={this.props.appMenus.PUBLIC_MENU_RIGHT}/>
          <StatusView />
           <Switch>
             <Route exact path="/" component={PublicContainer}/>
