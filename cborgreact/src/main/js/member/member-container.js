@@ -22,6 +22,7 @@ import PMProductContainer from './pm_product/product-container';
 import PMProjectContainer from './pm_project/project-container';
 import PMReleaseContainer from './pm_release/release-container';
 import PMBacklogContainer from './pm_backlog/backlog-container';
+import PMScrumContainer from './pm_scrum/scrum-container';
 import PMDefectContainer from './pm_defect/defect-container';
 import PMEnhancementContainer from './pm_enhancement/enhancement-container';
 import PMTaskContainer from './pm_task/task-container';
@@ -87,6 +88,7 @@ class MemberContainer extends Component {
             <PrivateRoute path="/pm-project" component={PMProjectContainer} permissions={myPermissions} code="MPMPROJ" pathto="/access-denied"/>
             <PrivateRoute path="/pm-release" component={PMReleaseContainer} permissions={myPermissions} code="MPMREL" pathto="/access-denied"/>
             <PrivateRoute path="/pm-backlog" component={PMBacklogContainer} permissions={myPermissions} code="MPMBAK" pathto="/access-denied"/>
+            <PrivateRoute path="/pm-scrum" component={PMScrumContainer} permissions={myPermissions} code="MPMSCR" pathto="/access-denied"/>
             <PrivateRoute path="/pm-defect" component={PMDefectContainer} permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>
             <PrivateRoute path="/pm-enhancement" component={PMEnhancementContainer} permissions={myPermissions} code="MPMENH" pathto="/access-denied"/>
             <PrivateRoute path="/pm-task" component={PMTaskContainer} permissions={myPermissions} code="MPMTASK" pathto="/access-denied"/>

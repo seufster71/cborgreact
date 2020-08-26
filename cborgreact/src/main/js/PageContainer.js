@@ -51,6 +51,7 @@ class PageContainer extends Component {
         <Route path="/pm-project" component={MemberContainer}/>
         <Route path="/pm-release" component={MemberContainer}/>
         <Route path="/pm-backlog" component={MemberContainer}/>
+        <Route path="/pm-scrum" component={MemberContainer}/>
         <Route path="/pm-defect" component={MemberContainer}/>
         <Route path="/pm-enhancement" component={MemberContainer}/>
         <Route path="/pm-task" component={MemberContainer}/>
