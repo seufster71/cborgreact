@@ -12,7 +12,7 @@ import roles from '../admin/roles/roles-reducer';
 import permissions from '../admin/permissions/permissions-reducer';
 import menus from '../admin/menu/menus-reducer';
 import preferences from '../admin/preferences/preferences-reducer';
-import preferenceSubView from '../admin/preferences/preference-subview-reducer';
+import preferenceSub from '../admin/preferences/preferences-sub-reducer';
 import category from '../admin/category/category-reducer';
 import services from '../admin/service/service-reducer';
 import clientDomains from '../system/clientdomain/clientdomain-reducer';
@@ -39,7 +39,7 @@ import pmworkflow from '../member/pm_workflow/workflow-reducer';
 import pmworkflowstep from '../member/pm_workflow/workflowstep-reducer';
 
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,statuses,
-  users,languages,roles,permissions,menus,preferences,preferenceSubView,category,services,clientDomains,applications,bugs,
+  users,languages,roles,permissions,menus,preferences,preferenceSub,category,services,clientDomains,applications,bugs,
 acquaintances,dashboard,userPrefs,pmteam,pmmember,pmrole,pmpermission,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement,pmscrum,pmsprint,pmtask,
 pmtestcase,pmtestscenario,pmworkflow,pmworkflowstep});
 
