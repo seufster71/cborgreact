@@ -107,7 +107,6 @@ class PageContainer extends Component {
 PageContainer.propTypes = {
   appPrefs: PropTypes.object.isRequired,
   appMenus: PropTypes.object,
-  lang: PropTypes.string,
   actions: PropTypes.object,
   session: PropTypes.object,
   history: PropTypes.object
@@ -116,7 +115,6 @@ PageContainer.propTypes = {
 function mapStateToProps(state, ownProps) {
   return {
     appMenus: state.appMenus,
-    lang: state.lang,
     appPrefs: state.appPrefs,
     navigation: state.navigation,
     session:state.session

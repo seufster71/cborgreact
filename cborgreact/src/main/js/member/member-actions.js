@@ -6,7 +6,7 @@ export function loadInitMember(responseJson) {
 }
 
 // thunk
-export function initMember() {
+export function init({lang}) {
 	return function(dispatch) {
 		let requestParams = {};
 		requestParams.action = "INIT";
@@ -14,6 +14,7 @@ export function initMember() {
 		//requestParams.prefFormKeys = new Array("LOGIN_FORM","REGISTRATION_FORM","FORGOTPASSWORD_FORM","PASSWORD_CHANGE_FORM");
 		requestParams.prefTextKeys = new Array("MEMBER_PAGE");
 		requestParams.menuNames = new Array("MEMBER_MENU_TOP","MEMBER_PROFILE_MENU_TOP");
+		requestParams.lang = lang;
 		let params = {};
 		params.requestParams = requestParams;
 		params.URI = '/api/member/callService';

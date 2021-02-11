@@ -8,24 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
 @Component( "restAuthenticationEntryPoint" )
-public class RestAuthenticationEntryPoint extends BasicAuthenticationEntryPoint {
+public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
 	@Override
 	public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)
 			throws IOException, ServletException {
-		response.addHeader("WWW-Authenticate", "xBasic realm="+getRealmName());
+		response.setContentType("application/json");
 		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		PrintWriter writer = response.getWriter();
 		writer.println("HTTP status 401 - " + authException.getMessage());
 	}
 
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		setRealmName("TOASTHUB_REALM");
-		super.afterPropertiesSet();
-	}
+	
 }

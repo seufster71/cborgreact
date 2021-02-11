@@ -47,11 +47,10 @@ class MemberContainer extends Component {
 	}
 
   componentDidMount() {
-    this.props.actions.initMember();
+    this.props.actions.init({lang:this.props.session.selected.lang});
   }
 
   changeTab(code,index) {
-      //this.setState({activeTab:code});
       this.props.history.replace(index);
   }
 
@@ -118,7 +117,6 @@ class MemberContainer extends Component {
 MemberContainer.propTypes = {
 	appPrefs: PropTypes.object.isRequired,
 	appMenus: PropTypes.object,
-	lang: PropTypes.string,
   session: PropTypes.object,
   member: PropTypes.object,
 	actions: PropTypes.object,
@@ -126,7 +124,7 @@ MemberContainer.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  return {appPrefs:state.appPrefs, appMenus:state.appMenus, lang:state.lang, session:state.session, member:state.member};
+  return {appPrefs:state.appPrefs, appMenus:state.appMenus, session:state.session, member:state.member};
 }
 
 function mapDispatchToProps(dispatch) {
