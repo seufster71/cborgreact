@@ -214,6 +214,14 @@ commitAll() {
 	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_workflow
 	checkAndCommit "${1}"
 	
+	ECHO "#### member ec product"
+	cd ~/git/cborgreact/cborgreact/src/main/js/member/ec_product
+	checkAndCommit "${1}"
+	
+	ECHO "#### memberView ec product"
+	cd ~/git/cborgreact/cborgreact/src/main/js/memberView/ec_product
+	checkAndCommit "${1}"
+	
 	ECHO "#### system"
 	cd ~/git/cborgreact/cborgreact/src/main/js/system
 	checkAndCommit "${1}"

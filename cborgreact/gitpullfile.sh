@@ -194,6 +194,14 @@ ECHO memberView pm workflow
 cd ~/git/cborgreact/cborgreact/src/main/js/memberView/pm_workflow
 git pull origin master
 
+ECHO member ec product
+cd ~/git/cborgreact/cborgreact/src/main/js/member/ec_product
+git pull origin master
+
+ECHO memberView ec product
+cd ~/git/cborgreact/cborgreact/src/main/js/memberView/ec_product
+git pull origin master
+
 ECHO system
 cd ~/git/cborgreact/cborgreact/src/main/js/system
 git pull origin master
