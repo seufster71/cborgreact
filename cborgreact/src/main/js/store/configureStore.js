@@ -14,8 +14,9 @@ export default function configureStore() {
       adminMenu:'ADMIN_MENU_TOP',
       systemMenu:'SYSTEM_MENU_TOP'
     },
-    session: { sessionActive: false , viewPort: 'large' },
-    status: { error: null, info: null, warn: null }
+    session: { sessionActive: false , viewPort: 'large', callComplete: false },
+    status: { error: null, info: null, warn: null },
+	member: { view: "login" }
   };
   return createStore(
     rootReducer,

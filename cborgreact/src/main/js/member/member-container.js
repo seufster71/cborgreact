@@ -2,11 +2,9 @@
 * Author Edward Seufert
 */
 'use strict';
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import { Switch, Route, withRouter, Redirect} from "react-router";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import * as memberActions from './member-actions';
 import LoginContainer from '../core/usermgnt/login-container';
 import StatusView from '../coreView/status/status-view';
@@ -39,96 +37,119 @@ import MemberView from '../memberView/member-view';
 import fuLogger from '../core/common/fu-logger';
 import {PrivateRoute} from '../core/common/utils';
 
-class MemberContainer extends Component {
-  constructor(props) {
-		super(props);
+function MemberContainer() {
+	const session = useSelector((state) => state.session);
+	const appMenus = useSelector((state) => state.appMenus);
+	const appPrefs = useSelector((state) => state.appPrefs);
+	const dispatch = useDispatch();
+	const location = useLocation();
+	const navigate = useNavigate();
+  	
+	useEffect(() => {
+    	dispatch(memberActions.init({lang:session.selected.lang}));
+  	}, []);
 
-    this.changeTab = this.changeTab.bind(this);
-	}
+  	const changeTab = (code,index) => {
+      navigate(index);
+  	}
 
-  componentDidMount() {
-    this.props.actions.init({lang:this.props.session.selected.lang});
-  }
-
-  changeTab(code,index) {
-      this.props.history.replace(index);
-  }
-
-  render() {
-    fuLogger.log({level:'TRACE',loc:'MemberContainer::render',msg:"path "+ this.props.history.location.pathname});
+    fuLogger.log({level:'TRACE',loc:'MemberContainer::render',msg:"path "+ location.pathname});
 
     let myMenus = [];
-    if (this.props.appMenus != null && this.props.appMenus[this.props.appPrefs.memberMenu] != null) {
-      myMenus = this.props.appMenus[this.props.appPrefs.memberMenu];
+    if (appMenus != null && appMenus[appPrefs.memberMenu] != null) {
+      myMenus = appMenus[appPrefs.memberMenu];
     }
     let profileMenu = [];
-    if (this.props.appMenus != null && this.props.appMenus.MEMBER_PROFILE_MENU_TOP != null) {
-    	profileMenu = this.props.appMenus.MEMBER_PROFILE_MENU_TOP;
+    if (appMenus != null && appMenus.MEMBER_PROFILE_MENU_TOP != null) {
+    	profileMenu = appMenus.MEMBER_PROFILE_MENU_TOP;
     }
     let myPermissions = {};
-    if (this.props.session != null && this.props.session.selected != null && this.props.session.selected.permissions != null) {
-      myPermissions = this.props.session.selected.permissions;
+    if (session != null && session.selected != null && session.selected.permissions != null) {
+      myPermissions = session.selected.permissions;
     }
     if (myMenus.length > 0) {
       return (
         <MemberView>
-          <NavigationView appPrefs={this.props.appPrefs} permissions={myPermissions}
-          menus={myMenus} changeTab={this.changeTab} activeTab={this.props.history.location.pathname} user={this.props.session.selected} profileMenu={profileMenu}/>
+          <NavigationView appPrefs={appPrefs} permissions={myPermissions}
+          menus={myMenus} changeTab={changeTab} activeTab={location.pathname} user={session.selected} profileMenu={profileMenu}/>
           <StatusView/>
-          <Switch>
-            <Route exact path="/" component={DashboardContainer} />
-            <Route exact path="/member" component={DashboardContainer} />
-            <PrivateRoute path="/member-acquaintances" component={AcquaintancesContainer} permissions={myPermissions} code="MA" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-team" component={PMTeamContainer} permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-member" component={PMMemberContainer} permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-role" component={PMRoleContainer} permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-permission" component={PMPermissionContainer} permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-product" component={PMProductContainer} permissions={myPermissions} code="MPMPROD" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-project" component={PMProjectContainer} permissions={myPermissions} code="MPMPROJ" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-release" component={PMReleaseContainer} permissions={myPermissions} code="MPMREL" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-backlog" component={PMBacklogContainer} permissions={myPermissions} code="MPMBAK" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-scrum" component={PMScrumContainer} permissions={myPermissions} code="MPMSCR" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-defect" component={PMDefectContainer} permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-enhancement" component={PMEnhancementContainer} permissions={myPermissions} code="MPMENH" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-task" component={PMTaskContainer} permissions={myPermissions} code="MPMTASK" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-workflow" component={PMWorkflowContainer} permissions={myPermissions} code="MPMWF" pathto="/access-denied"/>
-            <PrivateRoute path="/pm-workflowstep" component={PMWorkflowStepContainer} permissions={myPermissions} code="MPMWFS" pathto="/access-denied"/>
-            <PrivateRoute path="/member-groups" component={GroupsContainer} permissions={myPermissions} code="MG" pathto="/access-denied"/>
-            <PrivateRoute path="/member-notes" component={NotesContainer} permissions={myPermissions} code="MN" pathto="/access-denied"/>
-            <PrivateRoute path="/member-submenu" component={SubMenuContainer} permissions={myPermissions} code="MSM" pathto="/access-denied"/>
-            <PrivateRoute path="/member-shopping" component={ShoppingContainer} permissions={myPermissions} code="MS" pathto="/access-denied"/>
-            <PrivateRoute path="/member-profile" component={ProfileContainer} permissions={myPermissions} code="MP" minRights="W" pathto="/access-denied"/>
-            <PrivateRoute path="/member-logout" component={LogoutContainer} permissions={myPermissions} code="ML" pathto="/access-denied"/>
+          <Routes>
+            <Route index element={<DashboardContainer />} />
+            <Route element={<PrivateRoute permissions={myPermissions} code="MA" pathto="/access-denied" />} >
+				<Route path="member-acquaintances" element={<AcquaintancesContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
+				<Route path="pm-team/*" element={<PMTeamContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
+				<Route path="/pm-member/*" element={<PMMemberContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
+				<Route path="/pm-role/*" element={<PMRoleContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
+				<Route path="/pm-permission/*" element={<PMPermissionContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMPROD" pathto="/access-denied"/>} >
+				<Route path="/pm-product/*" element={<PMProductContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMPROJ" pathto="/access-denied"/>} >
+				<Route path="/pm-project/*" element={<PMProjectContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMREL" pathto="/access-denied"/>} >
+				<Route path="/pm-release/*" element={<PMReleaseContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMBAK" pathto="/access-denied"/>} >
+				<Route path="/pm-backlog/*" element={<PMBacklogContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMSCR" pathto="/access-denied"/>} >
+				<Route path="/pm-scrum/*" element={<PMScrumContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>} >
+				<Route path="/pm-defect/*" element={<PMDefectContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMENH" pathto="/access-denied"/>} >
+				<Route path="/pm-enhancement/*" element={<PMEnhancementContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMTASK" pathto="/access-denied"/>} >
+				<Route path="/pm-task/*" element={<PMTaskContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMWF" pathto="/access-denied"/>} >
+				<Route path="/pm-workflow/*" element={<PMWorkflowContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMWFS" pathto="/access-denied"/>} >
+				<Route path="/pm-workflowstep/*" element={<PMWorkflowStepContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MG" pathto="/access-denied"/>} >
+				<Route path="/member-groups/*" element={<GroupsContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MN" pathto="/access-denied"/>} >
+				<Route path="/member-notes/*" element={<NotesContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MSM" pathto="/access-denied"/>} >
+				<Route path="/member-submenu/*" element={<SubMenuContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MS" pathto="/access-denied"/>} >
+				<Route path="/member-shopping/*" element={<ShoppingContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MP" minRights="W" pathto="/access-denied"/>} >
+				<Route path="/member-profile/*" element={<ProfileContainer />} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="ML" pathto="/access-denied"/>} >
+				<Route path="/member-logout/*" element={<LogoutContainer />} />
+			</Route>
             <Route path="/admin" render={() => (
               <Redirect to="/admin"/>
             )}/>
-          </Switch>
+          </Routes>
         </MemberView>
       );
     } else {
-      return (
-        <MemberView> <LoadingView/>
-        </MemberView>
-      );
+      	return (
+        	<MemberView> <LoadingView/>
+        	</MemberView>
+      	);
     }
-  }
 }
 
-MemberContainer.propTypes = {
-	appPrefs: PropTypes.object.isRequired,
-	appMenus: PropTypes.object,
-  session: PropTypes.object,
-  member: PropTypes.object,
-	actions: PropTypes.object,
-  history: PropTypes.object
-};
-
-function mapStateToProps(state, ownProps) {
-  return {appPrefs:state.appPrefs, appMenus:state.appMenus, session:state.session, member:state.member};
-}
-
-function mapDispatchToProps(dispatch) {
-  return { actions:bindActionCreators(memberActions,dispatch) };
-}
-
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(MemberContainer));
+export default MemberContainer;
