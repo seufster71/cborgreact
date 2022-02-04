@@ -5,21 +5,21 @@ import appMenus from '../core/common/appmenu-reducer';
 import member from '../member/member-reducer';
 import session from '../member/session/session-reducer';
 import status from '../core/status/status-reducer';
-import statuses from '../admin/status/status-reducer';
-import users from '../admin/users/users-reducer';
-import languages from '../admin/language/language-reducer';
-import roles from '../admin/roles/roles-reducer';
-import permissions from '../admin/permissions/permissions-reducer';
-import menus from '../admin/menu/menus-reducer';
-import preferences from '../admin/preferences/preferences-reducer';
-import preferenceSub from '../admin/preferences/preferences-sub-reducer';
-import category from '../admin/category/category-reducer';
-import services from '../admin/service/service-reducer';
-import clientDomains from '../system/clientdomain/clientdomain-reducer';
-import applications from '../system/application/application-reducer';
-import bugs from '../admin/bugs/bugs-reducer';
+import adminstatus from '../admin/status/status-reducer';
+import adminusers from '../admin/users/users-reducer';
+import adminlanguage from '../admin/language/language-reducer';
+import adminroles from '../admin/roles/roles-reducer';
+import adminpermissions from '../admin/permissions/permissions-reducer';
+import adminmenus from '../admin/menu/menus-reducer';
+import adminpreferences from '../admin/preferences/preferences-reducer';
+import adminpreferenceSub from '../admin/preferences/preferences-sub-reducer';
+import admincategory from '../admin/category/category-reducer';
+import adminservices from '../admin/service/service-reducer';
+import systemclientDomains from '../system/clientdomain/clientdomain-reducer';
+import systemapplications from '../system/application/application-reducer';
+import adminbugs from '../admin/bugs/bugs-reducer';
 import acquaintances from '../member/acquaintances/acquaintances-reducer';
-import dashboard from '../admin/dashboard/dashboard-reducer';
+import admindashboard from '../admin/dashboard/dashboard-reducer';
 import pmteam from '../member/pm_team/team-reducer';
 import pmmember from '../member/pm_team/member-reducer';
 import pmrole from '../member/pm_team/role-reducer';
@@ -38,9 +38,9 @@ import pmtestscenario from '../member/pm_testscenario/testscenario-reducer';
 import pmworkflow from '../member/pm_workflow/workflow-reducer';
 import pmworkflowstep from '../member/pm_workflow/workflowstep-reducer';
 
-const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,statuses,
-  users,languages,roles,permissions,menus,preferences,preferenceSub,category,services,clientDomains,applications,bugs,
-acquaintances,dashboard,userPrefs,pmteam,pmmember,pmrole,pmpermission,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement,pmscrum,pmsprint,pmtask,
+const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,adminstatus,
+  adminusers,adminlanguage,adminroles,adminpermissions,adminmenus,adminpreferences,adminpreferenceSub,admincategory,adminservices,systemclientDomains,systemapplications,adminbugs,
+acquaintances,admindashboard,userPrefs,pmteam,pmmember,pmrole,pmpermission,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement,pmscrum,pmsprint,pmtask,
 pmtestcase,pmtestscenario,pmworkflow,pmworkflowstep});
 
 export default rootReducer;

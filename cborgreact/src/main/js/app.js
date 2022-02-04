@@ -1,5 +1,5 @@
 
-import React, { Component } from "react";
+import React from "react";
 import { render } from "react-dom";
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
@@ -8,7 +8,7 @@ import { initPublic } from "./core/common/apppref-actions";
 import { sessionCheck, viewPortChange } from "./member/session/session-actions";
 import PageContainer from "./PageContainer.js";
 import Bootstrap from "bootstrap/dist/css/bootstrap.css";
-import Theme from "./theme.css";
+import SiteCSS from "./site.css";
 import utils from './core/common/utils';
 
 if (process.env.NODE_ENV !== "production") {

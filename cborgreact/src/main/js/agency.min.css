@@ -71,7 +71,7 @@ a:active, a:focus, a:hover {
 
 .btn-primary {
 	color: #fff;
-	background-color: #248003
+	background-color: #248003;
 	/* background-color: #fed136; */
 	border-color: #248003
 }
@@ -261,7 +261,7 @@ a:active, a:focus, a:hover {
 }
 
 header {
-	background-image: url(../img/header-bg.jpg);
+	background-image: url(./img/header-bg.jpg);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;
@@ -660,7 +660,6 @@ aside.clients img {
 
 section#contact {
 	background-color: #222;
-	background-image: url(../img/map-image.png);
 	background-position: center;
 	background-repeat: no-repeat
 }
