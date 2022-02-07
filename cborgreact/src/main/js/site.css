@@ -150,6 +150,10 @@ body {
 	background-color: #1CA347;
 	border-color: #1CA347;
 }
+.btn.btn-radio.active {
+	color: #fed136;
+	background-color: #fff
+}
 .alert {
 	margin: 0px !important;
 }
@@ -301,4 +305,7 @@ ul.list-group.list-group-hover li:hover{
 	font-size: 4em;
 	margin-right: 3px;
 	color: Dodgerblue;
+}
+.toasthub-login-top {
+	margin-top: 60px;
 }
