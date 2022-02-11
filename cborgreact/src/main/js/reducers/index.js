@@ -2,9 +2,13 @@ import {combineReducers} from 'redux';
 import appPrefs from '../core/common/apppref-reducer';
 import userPrefs from'../core/common/userpref-reducer';
 import appMenus from '../core/common/appmenu-reducer';
+import status from '../core/status/status-reducer';
+
 import member from '../member/member-reducer';
 import session from '../member/session/session-reducer';
-import status from '../core/status/status-reducer';
+import acquaintances from '../member/acquaintances/acquaintances-reducer';
+import memberdashboard from '../member/dashboard/dashboard-reducer';
+
 import adminstatus from '../admin/status/status-reducer';
 import adminusers from '../admin/users/users-reducer';
 import adminlanguage from '../admin/language/language-reducer';
@@ -15,11 +19,12 @@ import adminpreferences from '../admin/preferences/preferences-reducer';
 import adminpreferenceSub from '../admin/preferences/preferences-sub-reducer';
 import admincategory from '../admin/category/category-reducer';
 import adminservices from '../admin/service/service-reducer';
+import admindashboard from '../admin/dashboard/dashboard-reducer';
+import adminbugs from '../admin/bugs/bugs-reducer';
+
 import systemclientDomains from '../system/clientdomain/clientdomain-reducer';
 import systemapplications from '../system/application/application-reducer';
-import adminbugs from '../admin/bugs/bugs-reducer';
-import acquaintances from '../member/acquaintances/acquaintances-reducer';
-import admindashboard from '../admin/dashboard/dashboard-reducer';
+
 import pmteam from '../member/pm_team/team-reducer';
 import pmmember from '../member/pm_team/member-reducer';
 import pmrole from '../member/pm_team/role-reducer';
@@ -38,7 +43,7 @@ import pmtestscenario from '../member/pm_testscenario/testscenario-reducer';
 import pmworkflow from '../member/pm_workflow/workflow-reducer';
 import pmworkflowstep from '../member/pm_workflow/workflowstep-reducer';
 
-const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,adminstatus,
+const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,adminstatus,memberdashboard,
   adminusers,adminlanguage,adminroles,adminpermissions,adminmenus,adminpreferences,adminpreferenceSub,admincategory,adminservices,systemclientDomains,systemapplications,adminbugs,
 acquaintances,admindashboard,userPrefs,pmteam,pmmember,pmrole,pmpermission,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement,pmscrum,pmsprint,pmtask,
 pmtestcase,pmtestscenario,pmworkflow,pmworkflowstep});

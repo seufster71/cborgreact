@@ -76,10 +76,10 @@ function MemberContainer() {
           <Routes>
             <Route index element={<DashboardContainer />} />
             <Route element={<PrivateRoute permissions={myPermissions} code="MA" pathto="/access-denied" />} >
-				<Route path="member-acquaintances" element={<AcquaintancesContainer />} />
+				<Route path="/acquaintances/*" element={<AcquaintancesContainer />} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
-				<Route path="pm-team/*" element={<PMTeamContainer />} />
+				<Route path="/pm-team/*" element={<PMTeamContainer />} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
 				<Route path="/pm-member/*" element={<PMMemberContainer />} />
@@ -121,22 +121,22 @@ function MemberContainer() {
 				<Route path="/pm-workflowstep/*" element={<PMWorkflowStepContainer />} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MG" pathto="/access-denied"/>} >
-				<Route path="/member-groups/*" element={<GroupsContainer />} />
+				<Route path="/groups/*" element={<GroupsContainer />} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MN" pathto="/access-denied"/>} >
-				<Route path="/member-notes/*" element={<NotesContainer />} />
+				<Route path="/notes/*" element={<NotesContainer />} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MSM" pathto="/access-denied"/>} >
 				<Route path="/member-submenu/*" element={<SubMenuContainer />} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MS" pathto="/access-denied"/>} >
-				<Route path="/member-shopping/*" element={<ShoppingContainer />} />
+				<Route path="/shopping/*" element={<ShoppingContainer />} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MP" minRights="W" pathto="/access-denied"/>} >
-				<Route path="/member-profile/*" element={<ProfileContainer />} />
+				<Route path="/profile/*" element={<ProfileContainer />} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="ML" pathto="/access-denied"/>} >
-				<Route path="/member-logout/*" element={<LogoutContainer />} />
+				<Route path="/logout/*" element={<LogoutContainer />} />
 			</Route>
             <Route path="/admin" render={() => (
               <Redirect to="/admin"/>
