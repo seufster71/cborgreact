@@ -18,12 +18,13 @@ import adminmenus from '../admin/menu/menus-reducer';
 import adminpreferences from '../admin/preferences/preferences-reducer';
 import adminpreferenceSub from '../admin/preferences/preferences-sub-reducer';
 import admincategory from '../admin/category/category-reducer';
-import adminservices from '../admin/service/service-reducer';
+import adminservice from '../admin/service/service-reducer';
 import admindashboard from '../admin/dashboard/dashboard-reducer';
 import adminbugs from '../admin/bugs/bugs-reducer';
 
-import systemclientDomains from '../system/clientdomain/clientdomain-reducer';
-import systemapplications from '../system/application/application-reducer';
+import systemclientdomain from '../system/clientdomain/clientdomain-reducer';
+import systemapplication from '../system/application/application-reducer';
+import systemservice from '../system/service/service-reducer';
 
 import pmteam from '../member/pm_team/team-reducer';
 import pmmember from '../member/pm_team/member-reducer';
@@ -44,7 +45,7 @@ import pmworkflow from '../member/pm_workflow/workflow-reducer';
 import pmworkflowstep from '../member/pm_workflow/workflowstep-reducer';
 
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,adminstatus,memberdashboard,
-  adminusers,adminlanguage,adminroles,adminpermissions,adminmenus,adminpreferences,adminpreferenceSub,admincategory,adminservices,systemclientDomains,systemapplications,adminbugs,
+  adminusers,adminlanguage,adminroles,adminpermissions,adminmenus,adminpreferences,adminpreferenceSub,admincategory,adminservice,adminbugs,systemclientdomain,systemapplication,systemservice,
 acquaintances,admindashboard,userPrefs,pmteam,pmmember,pmrole,pmpermission,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement,pmscrum,pmsprint,pmtask,
 pmtestcase,pmtestscenario,pmworkflow,pmworkflowstep});
 

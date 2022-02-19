@@ -21,7 +21,7 @@ export function init({lang}) {
 
 		return callService(params).then( (responseJson) => {
 			if (responseJson != null && responseJson.status != null && responseJson.status === "SUCCESS" && responseJson.protocalError == null && responseJson.errors == null) {
-				dispatch({ type: "MEMBER_INIT", responseJson });
+				dispatch({ type: "GLOBAL_INIT", responseJson });
 			} else if (responseJson != null && responseJson.errors != null) {
 				responseJson.status = "ERROR";
 				dispatch({type:'SHOW_STATUS_ERROR', error:[responseJson.errors]});
