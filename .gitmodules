@@ -157,3 +157,9 @@
 [submodule "cborgreact/src/main/js/memberView/ec_product"]
 	path = cborgreact/src/main/js/memberView/ec_product
 	url = https://github.com/seufster71/toasthub-reactweb-ec-product.git
+[submodule "cborgreact/src/main/js/member/pm_deploy"]
+	path = cborgreact/src/main/js/member/pm_deploy
+	url = https://github.com/seufster71/toasthub-react-pm-deploy.git
+[submodule "cborgreact/src/main/js/memberView/pm_deploy"]
+	path = cborgreact/src/main/js/memberView/pm_deploy
+	url = https://github.com/seufster71/toasthub-reactweb-pm-deploy.git
