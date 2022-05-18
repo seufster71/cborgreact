@@ -26,6 +26,7 @@ import PMEnhancementContainer from './pm_enhancement/enhancement-container';
 import PMTaskContainer from './pm_task/task-container';
 import PMWorkflowContainer from './pm_workflow/workflow-container';
 import PMWorkflowStepContainer from './pm_workflow/workflowstep-container';
+import PMDeployContainer from './pm_deploy/deploy-container';
 import NotesContainer from './notes/notes-container';
 import GroupsContainer from './groups/groups-container';
 import SubMenuContainer from './submenu/submenu-container';
@@ -119,6 +120,9 @@ function MemberContainer() {
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMWFS" pathto="/access-denied"/>} >
 				<Route path="/pm-workflowstep/*" element={<PMWorkflowStepContainer />} />
+			</Route>
+			 <Route element={<PrivateRoute permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>} >
+				<Route path="/pm-deploy/*" element={<PMDeployContainer />} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MG" pathto="/access-denied"/>} >
 				<Route path="/groups/*" element={<GroupsContainer />} />
