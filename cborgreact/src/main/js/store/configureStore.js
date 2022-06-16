@@ -9,7 +9,7 @@ export default function configureStore() {
     appPrefs: { lang: localStorage.getItem("lang"),
       headerName: "ToastHub",
       codeType : 'WEB',
-      debugClient: true,
+      debugClient: "TRACE",
       memberMenu:'MEMBER_MENU_TOP',
       adminMenu:'ADMIN_MENU_TOP',
       systemMenu:'SYSTEM_MENU_TOP'

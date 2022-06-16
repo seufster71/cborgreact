@@ -27,6 +27,8 @@ import PMTaskContainer from './pm_task/task-container';
 import PMWorkflowContainer from './pm_workflow/workflow-container';
 import PMWorkflowStepContainer from './pm_workflow/workflowstep-container';
 import PMDeployContainer from './pm_deploy/deploy-container';
+import PMDeployPipelineContainer from './pm_deploy/deploy-pipeline-container';
+import PMDeploySystemContainer from './pm_deploy/deploy-system-container';
 import NotesContainer from './notes/notes-container';
 import GroupsContainer from './groups/groups-container';
 import SubMenuContainer from './submenu/submenu-container';
@@ -36,9 +38,9 @@ import DashboardContainer from './dashboard/dashboard-container';
 import LogoutContainer from './logout/logout-container';
 import MemberView from '../memberView/member-view';
 import fuLogger from '../core/common/fu-logger';
-import {PrivateRoute} from '../core/common/utils';
+import {PrivateRoute} from '../core/common/router-utils-web';
 
-function MemberContainer() {
+export default function MemberContainer() {
 	const session = useSelector((state) => state.session);
 	const appMenus = useSelector((state) => state.appMenus);
 	const appPrefs = useSelector((state) => state.appPrefs);
@@ -121,8 +123,14 @@ function MemberContainer() {
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMWFS" pathto="/access-denied"/>} >
 				<Route path="/pm-workflowstep/*" element={<PMWorkflowStepContainer />} />
 			</Route>
-			 <Route element={<PrivateRoute permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>} >
+			<Route element={<PrivateRoute permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>} >
 				<Route path="/pm-deploy/*" element={<PMDeployContainer />} />
+			</Route>
+			<Route element={<PrivateRoute permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>} >
+				<Route path="/pm-deploypipeline/*" element={<PMDeployPipelineContainer />} />
+			</Route>
+			<Route element={<PrivateRoute permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>} >
+				<Route path="/pm-deploysystem/*" element={<PMDeploySystemContainer />} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MG" pathto="/access-denied"/>} >
 				<Route path="/groups/*" element={<GroupsContainer />} />
@@ -156,4 +164,3 @@ function MemberContainer() {
     }
 }
 
-export default MemberContainer;
