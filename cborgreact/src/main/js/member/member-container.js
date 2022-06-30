@@ -4,7 +4,7 @@
 'use strict';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import * as memberActions from './member-actions';
 import LoginContainer from '../core/usermgnt/login-container';
 import StatusView from '../coreView/status/status-view';
@@ -40,13 +40,11 @@ import MemberView from '../memberView/member-view';
 import fuLogger from '../core/common/fu-logger';
 import {PrivateRoute} from '../core/common/router-utils-web';
 
-export default function MemberContainer() {
+export default function MemberContainer({location,navigate}) {
 	const session = useSelector((state) => state.session);
 	const appMenus = useSelector((state) => state.appMenus);
 	const appPrefs = useSelector((state) => state.appPrefs);
 	const dispatch = useDispatch();
-	const location = useLocation();
-	const navigate = useNavigate();
   	
 	useEffect(() => {
     	dispatch(memberActions.init({lang:session.selected.lang}));
@@ -77,78 +75,78 @@ export default function MemberContainer() {
           menus={myMenus} changeTab={changeTab} activeTab={location.pathname} user={session.selected} profileMenu={profileMenu}/>
           <StatusView/>
           <Routes>
-            <Route index element={<DashboardContainer />} />
+            <Route index element={<DashboardContainer location={location} navigate={navigate}/>} />
             <Route element={<PrivateRoute permissions={myPermissions} code="MA" pathto="/access-denied" />} >
-				<Route path="/acquaintances/*" element={<AcquaintancesContainer />} />
+				<Route path="/acquaintances/*" element={<AcquaintancesContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
-				<Route path="/pm-team/*" element={<PMTeamContainer />} />
+				<Route path="/pm-team/*" element={<PMTeamContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
-				<Route path="/pm-member/*" element={<PMMemberContainer />} />
+				<Route path="/pm-member/*" element={<PMMemberContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
-				<Route path="/pm-role/*" element={<PMRoleContainer />} />
+				<Route path="/pm-role/*" element={<PMRoleContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
-				<Route path="/pm-permission/*" element={<PMPermissionContainer />} />
+				<Route path="/pm-permission/*" element={<PMPermissionContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMPROD" pathto="/access-denied"/>} >
-				<Route path="/pm-product/*" element={<PMProductContainer />} />
+				<Route path="/pm-product/*" element={<PMProductContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMPROJ" pathto="/access-denied"/>} >
-				<Route path="/pm-project/*" element={<PMProjectContainer />} />
+				<Route path="/pm-project/*" element={<PMProjectContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMREL" pathto="/access-denied"/>} >
-				<Route path="/pm-release/*" element={<PMReleaseContainer />} />
+				<Route path="/pm-release/*" element={<PMReleaseContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMBAK" pathto="/access-denied"/>} >
-				<Route path="/pm-backlog/*" element={<PMBacklogContainer />} />
+				<Route path="/pm-backlog/*" element={<PMBacklogContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMSCR" pathto="/access-denied"/>} >
-				<Route path="/pm-scrum/*" element={<PMScrumContainer />} />
+				<Route path="/pm-scrum/*" element={<PMScrumContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>} >
-				<Route path="/pm-defect/*" element={<PMDefectContainer />} />
+				<Route path="/pm-defect/*" element={<PMDefectContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMENH" pathto="/access-denied"/>} >
-				<Route path="/pm-enhancement/*" element={<PMEnhancementContainer />} />
+				<Route path="/pm-enhancement/*" element={<PMEnhancementContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMTASK" pathto="/access-denied"/>} >
-				<Route path="/pm-task/*" element={<PMTaskContainer />} />
+				<Route path="/pm-task/*" element={<PMTaskContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMWF" pathto="/access-denied"/>} >
-				<Route path="/pm-workflow/*" element={<PMWorkflowContainer />} />
+				<Route path="/pm-workflow/*" element={<PMWorkflowContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMWFS" pathto="/access-denied"/>} >
-				<Route path="/pm-workflowstep/*" element={<PMWorkflowStepContainer />} />
+				<Route path="/pm-workflowstep/*" element={<PMWorkflowStepContainer location={location} navigate={navigate}/>} />
 			</Route>
 			<Route element={<PrivateRoute permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>} >
-				<Route path="/pm-deploy/*" element={<PMDeployContainer />} />
+				<Route path="/pm-deploy/*" element={<PMDeployContainer location={location} navigate={navigate}/>} />
 			</Route>
 			<Route element={<PrivateRoute permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>} >
-				<Route path="/pm-deploypipeline/*" element={<PMDeployPipelineContainer />} />
+				<Route path="/pm-deploy/pm-deploypipeline/*" element={<PMDeployPipelineContainer location={location} navigate={navigate}/>} />
 			</Route>
 			<Route element={<PrivateRoute permissions={myPermissions} code="MPMDEF" pathto="/access-denied"/>} >
-				<Route path="/pm-deploysystem/*" element={<PMDeploySystemContainer />} />
+				<Route path="/pm-deploy/pm-deploysystem/*" element={<PMDeploySystemContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MG" pathto="/access-denied"/>} >
-				<Route path="/groups/*" element={<GroupsContainer />} />
+				<Route path="/groups/*" element={<GroupsContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MN" pathto="/access-denied"/>} >
-				<Route path="/notes/*" element={<NotesContainer />} />
+				<Route path="/notes/*" element={<NotesContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MSM" pathto="/access-denied"/>} >
-				<Route path="/member-submenu/*" element={<SubMenuContainer />} />
+				<Route path="/member-submenu/*" element={<SubMenuContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MS" pathto="/access-denied"/>} >
-				<Route path="/shopping/*" element={<ShoppingContainer />} />
+				<Route path="/shopping/*" element={<ShoppingContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MP" minRights="W" pathto="/access-denied"/>} >
-				<Route path="/profile/*" element={<ProfileContainer />} />
+				<Route path="/profile/*" element={<ProfileContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="ML" pathto="/access-denied"/>} >
-				<Route path="/logout/*" element={<LogoutContainer />} />
+				<Route path="/logout/*" element={<LogoutContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route path="/admin" render={() => (
               <Redirect to="/admin"/>

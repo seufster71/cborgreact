@@ -26,6 +26,8 @@ function PageContainer() {
 			fuLogger.log({level:'TRACE',loc:'PageContainer::session active',msg:"page "+ location.pathname});
 			dispatch({ type: "CLEAR_SESSION_LOGIN" });
 			navigate("/member");
+		} else if (session.callComplete == true && session.sessionActive == true && location.pathname === "/") {
+			navigate("/member");
 		} else if (session.callComplete == true && session.sessionActive == false) {
 			if (location.pathname === "/member-logout") {
 		    	navigate("/login");
@@ -40,11 +42,10 @@ function PageContainer() {
 		fuLogger.log({level:'TRACE',loc:'PageContainer::render session Active',msg:"page "+ location.pathname });
      return (
       <Routes>
-        <Route index element={<MemberContainer />} />
-        <Route path="member/*" element={<MemberContainer />} />
-        <Route path="access-denied" element={<AccessDeniedContainer />} />
-        <Route path="admin/*" element={<AdminContainer />} />
-        <Route path="system/*" element={<SystemContainer />} />
+        <Route path="/member/*" element={<MemberContainer location={location} navigate={navigate}/>} />
+        <Route path="/access-denied" element={<AccessDeniedContainer />} />
+        <Route path="/admin/*" element={<AdminContainer location={location} navigate={navigate}/>} />
+        <Route path="/system/*" element={<SystemContainer location={location} navigate={navigate}/>} />
       </Routes>
 
       );
@@ -56,10 +57,10 @@ function PageContainer() {
           menus={appMenus.PUBLIC_MENU_RIGHT}/>
          <StatusView />
           <Routes>
-            <Route path="/*" element={<PublicContainer />}/>
-            <Route path="/login/*" element={<LoginContainer />}/>
-            <Route path="/about/*" element={<PublicContainer />}/>
-            <Route path="/services/*" element={<ServiceContainer />}/>
+            <Route path="/*" element={<PublicContainer location={location} navigate={navigate}/>}/>
+            <Route path="/login/*" element={<LoginContainer location={location} navigate={navigate}/>}/>
+            <Route path="/about/*" element={<PublicContainer location={location} navigate={navigate}/>}/>
+            <Route path="/services/*" element={<ServiceContainer location={location} navigate={navigate}/>}/>
           </Routes>
         </div>
       );
