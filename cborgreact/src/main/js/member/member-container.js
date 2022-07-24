@@ -45,6 +45,7 @@ export default function MemberContainer({location,navigate}) {
 	const appMenus = useSelector((state) => state.appMenus);
 	const appPrefs = useSelector((state) => state.appPrefs);
 	const dispatch = useDispatch();
+	
   	
 	useEffect(() => {
     	dispatch(memberActions.init({lang:session.selected.lang}));
