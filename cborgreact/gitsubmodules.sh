@@ -1,7 +1,10 @@
 ECHO getting submodules
 
-cd ~/git/cborgreact/cborgreact
+GIT_DIR="git"
+BRANCH="feature/Ed_1_on_develop"
+
+cd ~/$GIT_DIR/cborgreact/cborgreact
 git submodule init
 git submodule update
-git submodule foreach git checkout master
-git submodule foreach git pull origin master
+git submodule foreach git checkout $BRANCH
+git submodule foreach git pull origin $BRANCH
