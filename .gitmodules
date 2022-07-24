@@ -16,24 +16,12 @@
 [submodule "cborgreact/src/main/js/systemView"]
 	path = cborgreact/src/main/js/systemView
 	url = https://github.com/seufster71/toasthub-reactweb-system.git 
-[submodule "cborgreact/src/main/js/member/acquaintances"]
-	path = cborgreact/src/main/js/member/acquaintances
-	url = https://github.com/seufster71/toasthub-react-member-acquaintances.git
 [submodule "cborgreact/src/main/js/member/dashboard"]
 	path = cborgreact/src/main/js/member/dashboard
 	url = https://github.com/seufster71/toasthub-react-member-dashboard.git
-[submodule "cborgreact/src/main/js/member/events"]
-	path = cborgreact/src/main/js/member/events
-	url = https://github.com/seufster71/toasthub-react-member-events.git
-[submodule "cborgreact/src/main/js/member/groups"]
-	path = cborgreact/src/main/js/member/groups
-	url = https://github.com/seufster71/toasthub-react-member-groups.git
 [submodule "cborgreact/src/main/js/member/logout"]
 	path = cborgreact/src/main/js/member/logout
 	url = https://github.com/seufster71/toasthub-react-member-logout.git
-[submodule "cborgreact/src/main/js/member/notes"]
-	path = cborgreact/src/main/js/member/notes
-	url = https://github.com/seufster71/toasthub-react-member-notes.git
 [submodule "cborgreact/src/main/js/member/profile"]
 	path = cborgreact/src/main/js/member/profile
 	url = https://github.com/seufster71/toasthub-react-member-profile.git
@@ -46,24 +34,12 @@
 [submodule "cborgreact/src/main/js/member/submenu"]
 	path = cborgreact/src/main/js/member/submenu
 	url = https://github.com/seufster71/toasthub-react-member-submenu.git
-[submodule "cborgreact/src/main/js/memberView/acquaintances"]
-	path = cborgreact/src/main/js/memberView/acquaintances
-	url = https://github.com/seufster71/toasthub-reactweb-member-acquaintances.git
 [submodule "cborgreact/src/main/js/memberView/dashboard"]
 	path = cborgreact/src/main/js/memberView/dashboard
 	url = https://github.com/seufster71/toasthub-reactweb-member-dashboard.git
-[submodule "cborgreact/src/main/js/memberView/events"]
-	path = cborgreact/src/main/js/memberView/events
-	url = https://github.com/seufster71/toasthub-reactweb-member-events.git
-[submodule "cborgreact/src/main/js/memberView/groups"]
-	path = cborgreact/src/main/js/memberView/groups
-	url = https://github.com/seufster71/toasthub-reactweb-member-groups.git
 [submodule "cborgreact/src/main/js/memberView/logout"]
 	path = cborgreact/src/main/js/memberView/logout
 	url = https://github.com/seufster71/toasthub-reactweb-member-logout.git
-[submodule "cborgreact/src/main/js/memberView/notes"]
-	path = cborgreact/src/main/js/memberView/notes
-	url = https://github.com/seufster71/toasthub-reactweb-member-notes.git
 [submodule "cborgreact/src/main/js/memberView/profile"]
 	path = cborgreact/src/main/js/memberView/profile
 	url = https://github.com/seufster71/toasthub-reactweb-member-profile.git
@@ -82,4 +58,12 @@
 [submodule "cborgreact/src/main/js/memberView/pm"]
 	path = cborgreact/src/main/js/memberView/pm
 	url = https://github.com/seufster71/toasthub-reactweb-member-pm.git
+	branch = feature/Ed_1_on_develop
+[submodule "cborgreact/src/main/js/member/social"]
+	path = cborgreact/src/main/js/member/social
+	url = https://github.com/seufster71/toasthub-react-member-social.git
+	branch = feature/Ed_1_on_develop
+[submodule "cborgreact/src/main/js/memberView/social"]
+	path = cborgreact/src/main/js/memberView/social
+	url = https://github.com/seufster71/toasthub-reactweb-member-social.git
 	branch = feature/Ed_1_on_develop
