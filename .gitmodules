@@ -73,93 +73,13 @@
 [submodule "cborgreact/src/main/js/memberView/submenu"]
 	path = cborgreact/src/main/js/memberView/submenu
 	url = https://github.com/seufster71/toasthub-reactweb-member-submenu.git
-[submodule "cborgreact/src/main/js/memberView/pm_product"]
-	path = cborgreact/src/main/js/memberView/pm_product
-	url = https://github.com/seufster71/toasthub-reactweb-pm-product.git
-[submodule "cborgreact/src/main/js/member/pm_product"]
-	path = cborgreact/src/main/js/member/pm_product
-	url = https://github.com/seufster71/toasthub-react-pm-product.git
-[submodule "cborgreact/src/main/js/memberView/pm_project"]
-	path = cborgreact/src/main/js/memberView/pm_project
-	url = https://github.com/seufster71/toasthub-reactweb-pm-project.git
-[submodule "cborgreact/src/main/js/member/pm_project"]
-	path = cborgreact/src/main/js/member/pm_project
-	url = https://github.com/seufster71/toasthub-react-pm-project.git
-[submodule "cborgreact/src/main/js/memberView/pm_release"]
-	path = cborgreact/src/main/js/memberView/pm_release
-	url = https://github.com/seufster71/toasthub-reactweb-pm-release.git
-[submodule "cborgreact/src/main/js/member/pm_release"]
-	path = cborgreact/src/main/js/member/pm_release
-	url = https://github.com/seufster71/toasthub-react-pm-release.git
-[submodule "cborgreact/src/main/js/member/pm_backlog"]
-	path = cborgreact/src/main/js/member/pm_backlog
-	url = https://github.com/seufster71/toasthub-react-pm-backlog.git
-[submodule "cborgreact/src/main/js/memberView/pm_backlog"]
-	path = cborgreact/src/main/js/memberView/pm_backlog
-	url = https://github.com/seufster71/toasthub-reactweb-pm-backlog.git
-[submodule "cborgreact/src/main/js/member/pm_defect"]
-	path = cborgreact/src/main/js/member/pm_defect
-	url = https://github.com/seufster71/toasthub-react-pm-defect.git
-[submodule "cborgreact/src/main/js/member/pm_enhancement"]
-	path = cborgreact/src/main/js/member/pm_enhancement
-	url = https://github.com/seufster71/toasthub-react-pm-enhancement.git
-[submodule "cborgreact/src/main/js/memberView/pm_defect"]
-	path = cborgreact/src/main/js/memberView/pm_defect
-	url = https://github.com/seufster71/toasthub-reactweb-pm-defect.git
-[submodule "cborgreact/src/main/js/memberView/pm_enhancement"]
-	path = cborgreact/src/main/js/memberView/pm_enhancement
-	url = https://github.com/seufster71/toasthub-reactweb-pm-enhancement.git
-[submodule "cborgreact/src/main/js/member/pm_scrum"]
-	path = cborgreact/src/main/js/member/pm_scrum
-	url = https://github.com/seufster71/toasthub-react-pm-scrum.git
-[submodule "cborgreact/src/main/js/member/pm_sprint"]
-	path = cborgreact/src/main/js/member/pm_sprint
-	url = https://github.com/seufster71/toasthub-react-pm-sprint.git
-[submodule "cborgreact/src/main/js/member/pm_task"]
-	path = cborgreact/src/main/js/member/pm_task
-	url = https://github.com/seufster71/toasthub-react-pm-task.git
-[submodule "cborgreact/src/main/js/member/pm_testcase"]
-	path = cborgreact/src/main/js/member/pm_testcase
-	url = https://github.com/seufster71/toasthub-react-pm-testcase.git
-[submodule "cborgreact/src/main/js/member/pm_testscenario"]
-	path = cborgreact/src/main/js/member/pm_testscenario
-	url = https://github.com/seufster71/toasthub-react-pm-testscenario.git
-[submodule "cborgreact/src/main/js/member/pm_workflow"]
-	path = cborgreact/src/main/js/member/pm_workflow
-	url = https://github.com/seufster71/toasthub-react-pm-workflow.git
-[submodule "cborgreact/src/main/js/memberView/pm_scrum"]
-	path = cborgreact/src/main/js/memberView/pm_scrum
-	url = https://github.com/seufster71/toasthub-reactweb-pm-scrum.git
-[submodule "cborgreact/src/main/js/memberView/pm_sprint"]
-	path = cborgreact/src/main/js/memberView/pm_sprint
-	url = https://github.com/seufster71/toasthub-reactweb-pm-sprint.git
-[submodule "cborgreact/src/main/js/memberView/pm_task"]
-	path = cborgreact/src/main/js/memberView/pm_task
-	url = https://github.com/seufster71/toasthub-reactweb-pm-task.git
-[submodule "cborgreact/src/main/js/memberView/pm_testcase"]
-	path = cborgreact/src/main/js/memberView/pm_testcase
-	url = https://github.com/seufster71/toasthub-reactweb-pm-testcase.git
-[submodule "cborgreact/src/main/js/memberView/pm_testscenario"]
-	path = cborgreact/src/main/js/memberView/pm_testscenario
-	url = https://github.com/seufster71/toasthub-reactweb-pm-testscenario.git
-[submodule "cborgreact/src/main/js/memberView/pm_workflow"]
-	path = cborgreact/src/main/js/memberView/pm_workflow
-	url = https://github.com/seufster71/toasthub-reactweb-pm-workflow.git
-[submodule "cborgreact/src/main/js/member/pm_team"]
-	path = cborgreact/src/main/js/member/pm_team
-	url = https://github.com/seufster71/toasthub-react-pm-team.git
-[submodule "cborgreact/src/main/js/memberView/pm_team"]
-	path = cborgreact/src/main/js/memberView/pm_team
-	url = https://github.com/seufster71/toasthub-reactweb-pm-team.git
 [submodule "cborgreact/src/main/js/member/ec_product"]
 	path = cborgreact/src/main/js/member/ec_product
 	url = https://github.com/seufster71/toasthub-react-ec-product.git
 [submodule "cborgreact/src/main/js/memberView/ec_product"]
 	path = cborgreact/src/main/js/memberView/ec_product
 	url = https://github.com/seufster71/toasthub-reactweb-ec-product.git
-[submodule "cborgreact/src/main/js/member/pm_deploy"]
-	path = cborgreact/src/main/js/member/pm_deploy
-	url = https://github.com/seufster71/toasthub-react-pm-deploy.git
-[submodule "cborgreact/src/main/js/memberView/pm_deploy"]
-	path = cborgreact/src/main/js/memberView/pm_deploy
-	url = https://github.com/seufster71/toasthub-reactweb-pm-deploy.git
+[submodule "cborgreact/src/main/js/memberView/pm"]
+	path = cborgreact/src/main/js/memberView/pm
+	url = https://github.com/seufster71/toasthub-reactweb-member-pm.git
+	branch = feature/Ed_1_on_develop
