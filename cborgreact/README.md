@@ -63,5 +63,8 @@ git submodule add -b feature/Ed_1_on_develop https://github.com/seufster71/toast
 
 cd to src/main/js/member
 git submodule add -b feature/Ed_1_on_develop https://github.com/seufster71/toasthub-react-member-pm.git pm
+git submodule add -b feature/Ed_1_on_develop https://github.com/seufster71/toasthub-react-member-social.git social
 cd to src/main/js/memberView
 git submodule add -b feature/Ed_1_on_develop https://github.com/seufster71/toasthub-reactweb-member-pm.git pm
+git submodule add -b feature/Ed_1_on_develop https://github.com/seufster71/toasthub-reactweb-member-social.git social
+
