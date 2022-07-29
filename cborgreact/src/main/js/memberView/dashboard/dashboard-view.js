@@ -4,7 +4,6 @@ import StatTile from '../../coreView/common/stat-tile';
 import Graph from '../../coreView/common/graphs';
 import ProgressBar from '../../coreView/common/progress-bar';
 
-#test
 export default function DashboardView({itemState, fields, texts, labels, onChangeLogin,
   onChangeRegistration, fieldChangeEvent, onForgotPassword,
   fieldBlurEvent, buttonClick, handleChange, changeView }) {
