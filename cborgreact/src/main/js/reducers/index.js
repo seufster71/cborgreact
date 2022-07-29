@@ -6,7 +6,7 @@ import status from '../core/status/status-reducer';
 
 import member from '../member/member-reducer';
 import session from '../member/session/session-reducer';
-import acquaintances from '../member/acquaintances/acquaintances-reducer';
+import acquaintances from '../member/social/acquaintances/acquaintances-reducer';
 import memberdashboard from '../member/dashboard/dashboard-reducer';
 
 import adminstatus from '../admin/status/status-reducer';
@@ -26,26 +26,26 @@ import systemclientdomain from '../system/clientdomain/clientdomain-reducer';
 import systemapplication from '../system/application/application-reducer';
 import systemservice from '../system/service/service-reducer';
 
-import pmteam from '../member/pm_team/team-reducer';
-import pmmember from '../member/pm_team/member-reducer';
-import pmrole from '../member/pm_team/role-reducer';
-import pmpermission from '../member/pm_team/permission-reducer';
-import pmproduct from '../member/pm_product/product-reducer';
-import pmproject from '../member/pm_project/project-reducer';
-import pmrelease from '../member/pm_release/release-reducer';
-import pmbacklog from '../member/pm_backlog/backlog-reducer';
-import pmdefect from '../member/pm_defect/defect-reducer';
-import pmenhancement from '../member/pm_enhancement/enhancement-reducer';
-import pmscrum from '../member/pm_scrum/scrum-reducer';
-import pmsprint from '../member/pm_sprint/sprint-reducer';
-import pmtask from '../member/pm_task/task-reducer';
-import pmtestcase from '../member/pm_testcase/testcase-reducer';
-import pmtestscenario from '../member/pm_testscenario/testscenario-reducer';
-import pmworkflow from '../member/pm_workflow/workflow-reducer';
-import pmworkflowstep from '../member/pm_workflow/workflowstep-reducer';
-import pmdeploy from '../member/pm_deploy/deploy-reducer';
-import pmdeploypipeline from '../member/pm_deploy/deploy-pipeline-reducer';
-import pmdeploysystem from '../member/pm_deploy/deploy-system-reducer';
+import pmteam from '../member/pm/team/team-reducer';
+import pmmember from '../member/pm/team/member-reducer';
+import pmrole from '../member/pm/team/role-reducer';
+import pmpermission from '../member/pm/team/permission-reducer';
+import pmproduct from '../member/pm/product/product-reducer';
+import pmproject from '../member/pm/project/project-reducer';
+import pmrelease from '../member/pm/release/release-reducer';
+import pmbacklog from '../member/pm/backlog/backlog-reducer';
+import pmdefect from '../member/pm/defect/defect-reducer';
+import pmenhancement from '../member/pm/enhancement/enhancement-reducer';
+import pmscrum from '../member/pm/scrum/scrum-reducer';
+import pmsprint from '../member/pm/sprint/sprint-reducer';
+import pmtask from '../member/pm/task/task-reducer';
+import pmtestcase from '../member/pm/testcase/testcase-reducer';
+import pmtestscenario from '../member/pm/testscenario/testscenario-reducer';
+import pmworkflow from '../member/pm/workflow/workflow-reducer';
+import pmworkflowstep from '../member/pm/workflow/workflowstep-reducer';
+import pmdeploy from '../member/pm/deploy/deploy-reducer';
+import pmdeploypipeline from '../member/pm/deploy/deploy-pipeline-reducer';
+import pmdeploysystem from '../member/pm/deploy/deploy-system-reducer';
 
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,adminstatus,memberdashboard,
   adminusers,adminlanguage,adminroles,adminpermissions,adminmenus,adminpreferences,adminpreferenceSub,admincategory,adminservice,adminbugs,systemclientdomain,systemapplication,systemservice,
