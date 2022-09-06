@@ -19,85 +19,85 @@ checkAndCommit() {
 }
 
 commitAll() {
-	ECHO "#### admin"
+	ECHO "######## admin"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/admin
 	checkAndCommit "${1}"
 
-	ECHO "#### adminView"
+	ECHO "######## adminView"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/adminView
 	checkAndCommit "${1}"
 	
 	
-	ECHO "#### core"
+	ECHO "######## core"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/core
 	checkAndCommit "${1}"
 	
-	ECHO "#### coreView"
+	ECHO "######## coreView"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/coreView
 	checkAndCommit "${1}"
 	
 	
-	ECHO "#### member social"
+	ECHO "######## member social"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/social
 	checkAndCommit "${1}"
 	
-	ECHO "#### memberView acquaintances"
+	ECHO "######## memberView social"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/memberView/social
 	checkAndCommit "${1}"
 	
 	
-	ECHO "#### member dashboard"
+	ECHO "######## member dashboard"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/dashboard
 	checkAndCommit "${1}"
 	
-	ECHO "#### memberView dashboard"
+	ECHO "######### memberView dashboard"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/memberView/dashboard
 	checkAndCommit "${1}"
 	
 	
-	ECHO "#### member logout"
+	ECHO "######## member logout"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/logout
 	checkAndCommit "${1}"
 	
-	ECHO "#### memberView logout"
+	ECHO "######## memberView logout"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/memberView/logout
 	checkAndCommit "${1}"
 	
 	
-	ECHO "#### member profile"
+	ECHO "######## member profile"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/profile
 	checkAndCommit "${1}"
 	
-	ECHO "#### memberView profile"
+	ECHO "######## memberView profile"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/memberView/profile
 	checkAndCommit "${1}"
 	
 	
-	ECHO "#### member session"
+	ECHO "######## member session"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/session
 	checkAndCommit "${1}"
 	
 	
-	ECHO "#### member pm product"
+	ECHO "######## member pm"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/pm
 	checkAndCommit "${1}"
 	
-	ECHO "#### memberView pm product"
+	ECHO "######## memberView pm"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/memberView/pm
 	checkAndCommit "${1}"
 	
 	
 	
-	ECHO "#### system"
+	ECHO "######## system"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/system
 	checkAndCommit "${1}"
 	
-	ECHO "#### systemView"
+	ECHO "######## systemView"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/systemView
 	checkAndCommit "${1}"
 	
 	
-	ECHO "#### main"
+	ECHO "######## main"
 	cd ~/$GIT_DIR/cborgreact/cborgreact
 	checkAndCommit "${1}"
 	
