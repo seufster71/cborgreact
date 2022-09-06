@@ -24,6 +24,8 @@ import PMScrumContainer from './pm/scrum/scrum-container';
 import PMDefectContainer from './pm/defect/defect-container';
 import PMEnhancementContainer from './pm/enhancement/enhancement-container';
 import PMTaskContainer from './pm/task/task-container';
+import PMTestCaseContainer from './pm/testcase/testcase-container';
+import PMTestScriptContainer from './pm/testscript/testscript-container';
 import PMWorkflowContainer from './pm/workflow/workflow-container';
 import PMWorkflowStepContainer from './pm/workflow/workflowstep-container';
 import PMDeployContainer from './pm/deploy/deploy-container';
@@ -114,6 +116,12 @@ export default function MemberContainer({location,navigate}) {
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMTASK" pathto="/access-denied"/>} >
 				<Route path="/pm-task/*" element={<PMTaskContainer location={location} navigate={navigate}/>} />
+			</Route>
+			 <Route element={<PrivateRoute permissions={myPermissions} code="MPMTC" pathto="/access-denied"/>} >
+				<Route path="/pm-testcase/*" element={<PMTestCaseContainer location={location} navigate={navigate}/>} />
+			</Route>
+            <Route element={<PrivateRoute permissions={myPermissions} code="MPMTS" pathto="/access-denied"/>} >
+				<Route path="/pm-testscript/*" element={<PMTestScriptContainer location={location} navigate={navigate}/>} />
 			</Route>
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMWF" pathto="/access-denied"/>} >
 				<Route path="/pm-workflow/*" element={<PMWorkflowContainer location={location} navigate={navigate}/>} />

@@ -40,7 +40,7 @@ import pmscrum from '../member/pm/scrum/scrum-reducer';
 import pmsprint from '../member/pm/sprint/sprint-reducer';
 import pmtask from '../member/pm/task/task-reducer';
 import pmtestcase from '../member/pm/testcase/testcase-reducer';
-import pmtestscenario from '../member/pm/testscenario/testscenario-reducer';
+import pmtestscript from '../member/pm/testscript/testscript-reducer';
 import pmworkflow from '../member/pm/workflow/workflow-reducer';
 import pmworkflowstep from '../member/pm/workflow/workflowstep-reducer';
 import pmdeploy from '../member/pm/deploy/deploy-reducer';
@@ -50,6 +50,6 @@ import pmdeploysystem from '../member/pm/deploy/deploy-system-reducer';
 const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,adminstatus,memberdashboard,
   adminusers,adminlanguage,adminroles,adminpermissions,adminmenus,adminpreferences,adminpreferenceSub,admincategory,adminservice,adminbugs,systemclientdomain,systemapplication,systemservice,
 acquaintances,admindashboard,userPrefs,pmteam,pmmember,pmrole,pmpermission,pmproduct,pmproject,pmrelease,pmbacklog,pmdefect,pmenhancement,pmscrum,pmsprint,pmtask,
-pmtestcase,pmtestscenario,pmworkflow,pmworkflowstep,pmdeploy,pmdeploypipeline,pmdeploysystem});
+pmtestcase,pmtestscript,pmworkflow,pmworkflowstep,pmdeploy,pmdeploypipeline,pmdeploysystem});
 
 export default rootReducer;
