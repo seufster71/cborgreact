@@ -16,45 +16,6 @@
 [submodule "cborgreact/src/main/js/systemView"]
 	path = cborgreact/src/main/js/systemView
 	url = https://github.com/seufster71/toasthub-reactweb-system.git 
-[submodule "cborgreact/src/main/js/member/dashboard"]
-	path = cborgreact/src/main/js/member/dashboard
-	url = https://github.com/seufster71/toasthub-react-member-dashboard.git
-[submodule "cborgreact/src/main/js/member/logout"]
-	path = cborgreact/src/main/js/member/logout
-	url = https://github.com/seufster71/toasthub-react-member-logout.git
-[submodule "cborgreact/src/main/js/member/profile"]
-	path = cborgreact/src/main/js/member/profile
-	url = https://github.com/seufster71/toasthub-react-member-profile.git
-[submodule "cborgreact/src/main/js/member/session"]
-	path = cborgreact/src/main/js/member/session
-	url = https://github.com/seufster71/toasthub-react-member-session.git
-[submodule "cborgreact/src/main/js/member/shopping"]
-	path = cborgreact/src/main/js/member/shopping
-	url = https://github.com/seufster71/toasthub-react-member-shopping.git
-[submodule "cborgreact/src/main/js/member/submenu"]
-	path = cborgreact/src/main/js/member/submenu
-	url = https://github.com/seufster71/toasthub-react-member-submenu.git
-[submodule "cborgreact/src/main/js/memberView/dashboard"]
-	path = cborgreact/src/main/js/memberView/dashboard
-	url = https://github.com/seufster71/toasthub-reactweb-member-dashboard.git
-[submodule "cborgreact/src/main/js/memberView/logout"]
-	path = cborgreact/src/main/js/memberView/logout
-	url = https://github.com/seufster71/toasthub-reactweb-member-logout.git
-[submodule "cborgreact/src/main/js/memberView/profile"]
-	path = cborgreact/src/main/js/memberView/profile
-	url = https://github.com/seufster71/toasthub-reactweb-member-profile.git
-[submodule "cborgreact/src/main/js/memberView/shopping"]
-	path = cborgreact/src/main/js/memberView/shopping
-	url = https://github.com/seufster71/toasthub-reactweb-member-shopping.git
-[submodule "cborgreact/src/main/js/memberView/submenu"]
-	path = cborgreact/src/main/js/memberView/submenu
-	url = https://github.com/seufster71/toasthub-reactweb-member-submenu.git
-[submodule "cborgreact/src/main/js/member/ec_product"]
-	path = cborgreact/src/main/js/member/ec_product
-	url = https://github.com/seufster71/toasthub-react-ec-product.git
-[submodule "cborgreact/src/main/js/memberView/ec_product"]
-	path = cborgreact/src/main/js/memberView/ec_product
-	url = https://github.com/seufster71/toasthub-reactweb-ec-product.git
 [submodule "cborgreact/src/main/js/memberView/pm"]
 	path = cborgreact/src/main/js/memberView/pm
 	url = https://github.com/seufster71/toasthub-reactweb-member-pm.git
@@ -66,4 +27,8 @@
 [submodule "cborgreact/src/main/js/memberView/social"]
 	path = cborgreact/src/main/js/memberView/social
 	url = https://github.com/seufster71/toasthub-reactweb-member-social.git
+	branch = feature/Ed_1_on_develop
+[submodule "cborgreact/src/main/js/member/pm"]
+	path = cborgreact/src/main/js/member/pm
+	url = https://github.com/seufster71/toasthub-react-member-pm.git
 	branch = feature/Ed_1_on_develop
