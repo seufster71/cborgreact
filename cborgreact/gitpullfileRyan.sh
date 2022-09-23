@@ -1,5 +1,5 @@
 GIT_DIR="git"
-BRANCH="feature/Ed_1_on_develop"
+BRANCH="feature/Ryan_1_on_develop"
 
 ECHO admin
 cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/admin
