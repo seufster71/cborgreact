@@ -5,7 +5,7 @@ import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { initPublic } from "./core/common/apppref-actions";
-import { sessionCheck, viewPortChange } from "./member/session/session-actions";
+import { sessionCheck, viewPortChange } from "./core/session/session-actions";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import PageContainer from "./PageContainer.js";
 import Bootstrap from "bootstrap/dist/css/bootstrap.css";
