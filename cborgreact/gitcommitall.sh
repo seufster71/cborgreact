@@ -45,39 +45,6 @@ commitAll() {
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/memberView/social
 	checkAndCommit "${1}"
 	
-	
-	ECHO "######## member dashboard"
-	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/dashboard
-	checkAndCommit "${1}"
-	
-	ECHO "######### memberView dashboard"
-	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/memberView/dashboard
-	checkAndCommit "${1}"
-	
-	
-	ECHO "######## member logout"
-	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/logout
-	checkAndCommit "${1}"
-	
-	ECHO "######## memberView logout"
-	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/memberView/logout
-	checkAndCommit "${1}"
-	
-	
-	ECHO "######## member profile"
-	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/profile
-	checkAndCommit "${1}"
-	
-	ECHO "######## memberView profile"
-	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/memberView/profile
-	checkAndCommit "${1}"
-	
-	
-	ECHO "######## member session"
-	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/session
-	checkAndCommit "${1}"
-	
-	
 	ECHO "######## member pm"
 	cd ~/$GIT_DIR/cborgreact/cborgreact/src/main/js/member/pm
 	checkAndCommit "${1}"

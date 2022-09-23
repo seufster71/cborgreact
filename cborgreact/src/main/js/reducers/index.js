@@ -5,9 +5,9 @@ import appMenus from '../core/common/appmenu-reducer';
 import status from '../core/status/status-reducer';
 
 import member from '../member/member-reducer';
-import session from '../member/session/session-reducer';
+import session from '../core/session/session-reducer';
 import acquaintances from '../member/social/acquaintances/acquaintances-reducer';
-import memberdashboard from '../member/dashboard/dashboard-reducer';
+import memberdashboard from '../member/social/dashboard/dashboard-reducer';
 
 import adminstatus from '../admin/status/status-reducer';
 import adminusers from '../admin/users/users-reducer';
